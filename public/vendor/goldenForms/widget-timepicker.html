@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<title>Golden Forms Pro - Timepicker Widget</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/goldenforms-pro.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/jquery-ui-timepicker.min.js"></script>
+        <script src="js/jquery-ui-touch-punch.min.js"></script>        
+        
+        <!--[if lte IE 9]>   
+        	<script src="js/jquery.placeholder.min.js"></script>
+        <![endif]-->      
+          
+        <!--[if IE 9]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie9.css">
+        <![endif]-->
+        
+        <!--[if lte IE 8]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie8.css">
+        <![endif]-->
+
+		<script type="text/javascript">
+		
+			$(function() {
+			
+				$('#dtpicker').datetimepicker({
+					altField: "#dtpfield",
+					altFieldTimeOnly: false,					
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>'
+				});
+				
+				$('#timepicker1').timepicker({
+					beforeShow: function(input, inst) {
+						var newclass = 'goldenforms-pro'; 
+						var smartpikr = inst.dpDiv.parent();
+						if (!smartpikr.hasClass('goldenforms-pro')){
+							inst.dpDiv.wrap('<div class="'+newclass+'"></div>');
+						}
+					}
+				});
+				
+				$('#timepicker2').timepicker({
+					timeFormat: 'HH:mm:ss:TT',
+					showSecond: true,
+					beforeShow: function(input, inst) {
+						var newclass = 'goldenforms-pro'; 
+						var smartpikr = inst.dpDiv.parent();
+						if (!smartpikr.hasClass('goldenforms-pro')){
+							inst.dpDiv.wrap('<div class="'+newclass+'"></div>');
+						}
+					}
+				});
+				
+				$('#dtimepicker1').datetimepicker({
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',
+					dateFormat: "yy-mm-dd",
+					timeFormat: "HH:mm:ss",				
+					beforeShow: function(input, inst) {
+						var newclass = 'goldenforms-pro'; 
+						var smartpikr = inst.dpDiv.parent();
+						if (!smartpikr.hasClass('goldenforms-pro')){
+							inst.dpDiv.wrap('<div class="'+newclass+'"></div>');
+						}
+					}
+				});
+				
+				$('#dtimepicker2').datetimepicker({
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',				
+					beforeShow: function(input, inst) {
+						var newclass = 'goldenforms-pro'; 
+						var smartpikr = inst.dpDiv.parent();
+						if (!smartpikr.hasClass('goldenforms-pro')){
+							inst.dpDiv.wrap('<div class="'+newclass+'"></div>');
+						}
+					}
+				});	
+				
+				$("#datepicker1").datepicker({
+					numberOfMonths: 1,
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',			
+					showButtonPanel: false
+				});
+				
+				$("#datepicker2").datepicker({
+					numberOfMonths: 1,
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',			
+					showButtonPanel: false
+				});
+				
+			});			
+        </script>
+    </head>
+    <body class="frm-bg2">
+        <div class="goldenforms-pro">
+            <div class="goldenforms-wrapper">
+                <div class="goldenforms-container gpro-container4">
+                    <form action="" method="post" id="gform-pro">
+                        <div class="frm-header">
+                        	<h4>Timepicker Widget</h4>
+                        </div><!-- end .frm-header section -->
+                        <div class="frm-body">
+                        
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="timepicker1" class="uit-input" placeholder="Basic timepicker">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="timepicker2" class="uit-input" placeholder="Options timepicker">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="dtimepicker1" class="uit-input" placeholder="Date timepicker">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="dtimepicker2" class="uit-input" placeholder="Date timepicker options">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->                            
+                            
+                            <div class="frm-section cal-widget">            
+                                <label class="field">
+                                	<input type="text" id="dtpfield" class="uit-input" placeholder="Inline time datepicker">
+                                </label>
+                                <span id="dtpicker"></span>
+                            </div><!-- end section -->                                                        
+                            
+                        </div><!-- end .frm-body  section -->
+                        <div class="frm-footer">
+                        	<button type="submit" class="uit-button btn-blue"> Send Form </button>
+                            <button type="reset" class="uit-button"> Cancel </button>
+                        </div><!-- end .frm-footer section -->   
+                    </form>   		
+                </div><!-- end .goldenforms-container section -->  
+            </div><!-- end .goldenforms-wrapper section -->  
+        </div><!-- end .goldenforms-pro section -->
+    </body>
+</html>

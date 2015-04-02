@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<title>Golden Forms Pro - Datepicker Widget</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/goldenforms-pro.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+        
+        <!--[if lte IE 9]>   
+        	<script src="js/jquery.placeholder.min.js"></script>
+        <![endif]-->      
+          
+        <!--[if IE 9]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie9.css">
+        <![endif]-->
+        
+        <!--[if lte IE 8]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie8.css">
+        <![endif]-->
+
+		<script type="text/javascript">
+		
+			$(function() {
+			
+				$("#from").datepicker({
+					defaultDate: "+1w",
+					changeMonth: false,
+					numberOfMonths: 1,
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',
+					onClose: function( selectedDate ) {
+						$("#to").datepicker("option", "minDate", selectedDate);
+					}
+				});
+				
+				$("#to").datepicker({
+					defaultDate: "+1w",
+					changeMonth: false,
+					numberOfMonths: 1,
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',			
+					onClose: function( selectedDate ) {
+						$("#from").datepicker("option", "maxDate", selectedDate);
+					}
+				});
+				
+				$("#datepicker1").datepicker({
+					numberOfMonths: 1,
+					showOn: 'both',
+					buttonText: '<i class="fa fa-calendar"></i>',					
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',			
+					showButtonPanel: true
+				});
+				
+				$("#datepicker2").datepicker({
+					numberOfMonths: 1,
+					showOn: 'both',
+					buttonText: '<i class="fa fa-calendar"></i>',					
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',			
+					showButtonPanel: true
+				});				
+				
+				$(".inline-calender").datepicker({
+					numberOfMonths: 1,
+					minDate: -20, 
+					maxDate: "+1M -10D",
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>'			
+				});		
+			
+			});
+			
+        </script>
+    </head>
+    <body class="frm-bg2">
+        <div class="goldenforms-pro">
+            <div class="goldenforms-wrapper">
+                <div class="goldenforms-container gpro-container4">
+                    <form action="" method="post" id="gform-pro">
+                        <div class="frm-header">
+                        	<h4>Datepicker Widget</h4>
+                        </div><!-- end .frm-header section -->
+                        <div class="frm-body">
+                        
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="from" class="uit-input" placeholder="Range from date">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="to" class="uit-input" placeholder="Range to date">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">          
+                                    <label class="field prepend-picker-icon picker-green">
+                                        <input type="text" id="datepicker1" class="uit-input" placeholder="Green picker button" />
+                                    </label>
+                                </div><!-- end section -->
+                                <div class="frm-section colm colm6">           
+                                    <label class="field append-picker-icon picker-blue">
+                       					<input type="text" id="datepicker2" class="uit-input" placeholder="Blue picker button" />
+                                    </label>
+                                </div><!-- end section -->                                                                                   
+                        	</div> <!-- end .frm-row section -->
+                            
+                            <div class="frm-section cal-widget">            
+                                <div class="inline-calender"></div> 
+                            </div><!-- end section --> 
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6 cal-widget">
+                                	<div class="inline-calender"></div> 
+                                </div><!-- end section -->
+                                <div class="frm-section colm colm6 cal-widget">
+                                	<div class="inline-calender"></div> 
+                                </div><!-- end section -->                                                                                   
+                        	</div> <!-- end .frm-row section -->                                                                                    
+                            
+                        </div><!-- end .frm-body  section -->
+                        <div class="frm-footer">
+                        	<button type="submit" class="uit-button btn-blue"> Send Form </button>
+                            <button type="reset" class="uit-button"> Cancel </button>
+                        </div><!-- end .frm-footer section -->   
+                    </form>   		
+                </div><!-- end .goldenforms-container section -->  
+            </div><!-- end .goldenforms-wrapper section -->  
+        </div><!-- end .goldenforms-pro section -->
+    </body>
+</html>

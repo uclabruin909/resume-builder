@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<title>Golden Forms Pro - Form Masking </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/goldenforms-pro.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        
+        <script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery.maskedinput.js"></script>        
+		<script>
+			$(function() {		
+			
+				$.mask.definitions['f'] = "[A-Fa-f0-9]"; 	
+				$("#telephone").mask('(999) 999-999999', {placeholder:'X'});
+				$("#telephonext").mask('(+999) 999-9999? 99999', {placeholder:'X'}); 
+				$("#zipcode").mask('99999', {placeholder:'X'});
+				$("#dates").mask('99/99/9999', {placeholder:'_'});
+				$("#dates2").mask('99-99-9999', {placeholder:'_'});
+				$("#time").mask('99:99:99', {placeholder:'_'});
+				$("#date-time").mask('99/99/9999 99:99:99', {placeholder:'_'});
+				$("#currency").mask('999,999,999,999,999.99', {placeholder:'_'});
+				$("#ip4").mask('999.999.999.999', {placeholder:'_'});
+				$("#ip6").mask('9999:9999:9999:9:999:9999:9999:9999', {placeholder:'_'});
+				$("#isbn").mask('999-99-999-9999-9', {placeholder:'_'});
+				$("#isbn2").mask('999 99 999 9999 9', {placeholder:'_'});
+				$("#taxid").mask('99-9999999', {placeholder:'_'});
+				$("#serial").mask('***-****-****-****', {placeholder:'_'});
+				$("#color").mask('#ffffff', {placeholder:'_'});
+				$("#alpha").mask('aaaaaa-aaaaaa', {placeholder:'X'});
+				$("#product").mask("a*-999-a999",{placeholder:"_",
+							 completed:function(){
+								alert("Congraturations! Product activated the with a valid key: "+this.val());
+							 }
+				});
+				
+				/* @advanced masking rules 
+				------------------------------------------------------------------------ */	
+				var creditcard = $("#creditcard").mask('9999-9999-9999-9999', {placeholder:'X'});
+				$("#cardtype").change(
+					function() {
+						switch ($(this).val()){
+							case 'amex':
+							  creditcard.unmask().mask('9999-999999-99999', {placeholder:'_'});
+							  break;
+							default:
+							  creditcard.unmask().mask('9999-9999-9999-9999', {placeholder:'X'});
+							  break;
+						  }
+					}
+				);
+			
+			});
+        </script>        
+        
+        <!--[if lte IE 9]>   
+        	<script src="js/jquery.placeholder.min.js"></script>
+        <![endif]-->      
+          
+        <!--[if IE 9]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie9.css">
+        <![endif]-->
+        
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/goldenforms-pro-ie8.css">
+            <script src="js/goldenforms-pro-ie8.js"></script>
+        <![endif]-->
+        
+        
+        
+    </head>
+    <body class="frm-bg2">
+        <div class="goldenforms-pro">
+            <div class="goldenforms-wrapper">
+                <div class="goldenforms-container gpro-container4">
+                
+                    <form action="" method="post" id="gform-pro" enctype="multipart/form-data">
+                    
+                        <div class="frm-header">
+                        	<h4>Form Masking</h4>
+                        </div><!-- end .frm-header section -->                    
+                
+                        <div class="frm-body">
+                        
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="telephone" id="telephone" class="uit-input" placeholder="Enter telephone">
+                                    <span class="field-icon"><i class="fa fa-phone-square"></i></span>                       
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="telephonext" id="telephonext" class="uit-input" placeholder="Telephone with +">
+                                    <span class="field-icon"><i class="fa fa-phone"></i></span>                       
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="zipcode" id="zipcode" class="uit-input" placeholder="Zip code">
+                                    <span class="field-icon"><i class="fa fa-compass"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="color" id="color" class="uit-input" placeholder="Color HEX code">
+                                    <span class="field-icon"><i class="fa fa-tint"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="dates" id="dates" class="uit-input" placeholder="Date - DD/MM/YYYY" >
+                                    <span class="field-icon"><i class="fa fa-calendar"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="dates2" id="dates2" class="uit-input" placeholder="Date - DD-MM-YYYY">
+                                    <span class="field-icon"><i class="fa fa-calendar-o"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="time" id="time" class="uit-input" placeholder="Time - 00:00:00" >
+                                    <span class="field-icon"><i class="fa fa-clock-o"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="date-time" id="date-time" class="uit-input" placeholder="Date Time - DD/MM/YYYY 00:00:00">
+                                    <span class="field-icon"><i class="fa fa-clock-o"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="ip4" id="ip4" class="uit-input" placeholder="IPV4 - 192.168.110.310">
+                                    <span class="field-icon"><i class="fa fa-link"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="ip6" id="ip6" class="uit-input" placeholder="IPV6 - 9999:9999:9999:9:999:9999:9999:9999">
+                                    <span class="field-icon"><i class="fa fa-globe"></i></span>
+                                </label>
+                            </div><!-- end section --> 
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="isbn" id="isbn" class="uit-input" placeholder="ISBN number">
+                                    <span class="field-icon"><i class="fa fa-barcode"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="isbn2" id="isbn2" class="uit-input" placeholder="ISBN number spaced">
+                                    <span class="field-icon"><i class="fa fa-barcode"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="currency" id="currency" class="uit-input" placeholder="Currency">
+                                    <span class="field-icon"><i class="fa fa-money"></i></span>
+                                </label>
+                            </div><!-- end section -->  
+                            
+                            <div class="frm-section">            
+                                <label class="field prepend-icon">
+                                    <input type="text" name="serial" id="serial" class="uit-input" placeholder="Product serial">
+                                    <span class="field-icon"><i class="fa fa-certificate"></i></span>
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field uit-select">
+                                        <select id="cardtype" name="cardtype">
+                                            <option value="">Choose Card Type</option>
+                                            <option value="amex">American Express</option>
+                                            <option value="discover">Discover</option>
+                                            <option value="mastercard">MasterCard</option>
+                                            <option value="visa">Visa</option>
+                                        </select>
+                                        <i class="select-arrow"></i>                        
+                                    </label>
+                                </div><!-- end section -->
+                                <div class="frm-section colm colm6">          
+                                    <label class="field prepend-icon">
+                                        <input type="text" id="creditcard" name="creditcard" class="uit-input" placeholder="Credit card number">
+                                        <span class="field-icon"><i class="fa fa-credit-card"></i></span>
+                                    </label>
+                                </div><!-- end section -->                                                                                   
+                        	</div> <!-- end .frm-row section -->                                                                    
+
+                        </div><!-- .frm-body -->
+                        <div class="frm-footer">
+                            <button  type="submit" class="uit-button btn-blue">Submit Button</button>
+                            <button type="reset" class="uit-button">Cancel</button>
+                        </div><!-- end section -->                         
+                    </form>
+                    
+                </div><!-- end .goldenforms-container section -->  
+            </div><!-- end .goldenforms-wrapper section -->  
+        </div><!-- end .goldenforms-pro section -->
+        <div></div><!-- end section -->         
+    </body>
+</html>

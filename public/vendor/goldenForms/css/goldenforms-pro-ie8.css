@@ -1,0 +1,56 @@
+.goldenforms-pro .uit-input{ line-height:36px; }
+.goldenforms-pro .uit-file .file-field{
+  filter:alpha(opacity=0);
+  cursor:pointer;
+  zoom: 1;
+}
+
+/* @radio checkbox 
+---------------------------------------------------------------- */
+.goldenforms-pro .uit-option > input { 
+	filter: alpha(opacity=0); 
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)'; 
+}
+.goldenforms-pro .uit-option > input + .checkbox-option:before, 
+.goldenforms-pro .uit-option > input + .radio-option:before {  display: none;  }
+.goldenforms-pro .uit-option > .checked + .checkbox-option:before, 
+.goldenforms-pro .uit-option > .checked + .radio-option:before { display: block; }
+.goldenforms-pro .uit-option > .checked + .checkbox-option:before{
+	content:'\f00c';
+	border:none;
+	font-family:'FontAwesome';
+	color:#999999;
+	top:2px;
+	left:4px;
+}
+
+.goldenforms-pro .uit-option > .checked + .radio-option:before {
+    width: 8px;
+    height: 8px;
+    background: #999999;
+	margin:6px 0 0 6px;
+}
+
+/* @toggle switches 
+------------------------------------------------------------ */
+.goldenforms-pro .uit-switch > label:after { right:-5px; }
+.goldenforms-pro .uit-switch > .checked + label { padding-left: 32px; background: #33a0e8; color: white; }
+.goldenforms-pro .uit-switch > .checked + label:after { content: attr(data-on); left: 5px; }
+.goldenforms-pro .switch-square > .checked + label { padding-left: 32px; }
+.goldenforms-pro .switch-green > .checked + label { background: #9dcf4a; }
+.goldenforms-pro .switch-black > .checked + label { background: #333333; }
+.goldenforms-pro .switch-red > .checked + label { background: #cf3025; }
+
+/* @rating 
+------------------------------------------------------- */
+.goldenforms-pro .uit-rating .checked + label,
+.goldenforms-pro .uit-rating .checked + label + input + label,
+.goldenforms-pro .uit-rating .checked + label + input + label + input + label,
+.goldenforms-pro .uit-rating .checked + label + input + label + input + label + input + label,
+.goldenforms-pro .uit-rating .checked + label + input + label + input + label + input + label + input + label,
+.goldenforms-pro .uit-rating .checked + label + input + label + input + label + input + label + input + label + input + label,
+.goldenforms-pro .uit-rating .checked + label + input + label + input + label + input + label + input + label + input + label + input + label,
+.goldenforms-pro .uit-rating .checked + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label,
+.goldenforms-pro .uit-rating .checked + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label,.goldenforms-pro .uit-rating .checked + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label{
+	color: #FFB801;
+}

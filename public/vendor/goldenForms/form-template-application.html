@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<title>Golden Forms Pro - Application Form </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/goldenforms-pro.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        
+        <!--[if lte IE 9]>
+        	<script src="js/jquery-1.9.1.min.js"></script>   
+        	<script src="js/jquery.placeholder.min.js"></script>
+        <![endif]-->      
+          
+        <!--[if IE 9]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie9.css">
+        <![endif]-->
+        
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/goldenforms-pro-ie8.css">
+        <![endif]-->
+        
+    </head>
+    <body class="frm-bg2">
+        <div class="goldenforms-pro">
+            <div class="goldenforms-wrapper">
+                <div class="goldenforms-container gpro-container4">
+                    <form action="" method="post" id="gform-pro" enctype="multipart/form-data">
+                        <div class="frm-header">
+                        	<h4>Application Form</h4>
+                        </div><!-- end .frm-header section -->
+                        <div class="frm-body">
+                        
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" name="firstname" id="firstname" class="uit-input" placeholder="Enter first name">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" name="lastname" id="lastname" class="uit-input" placeholder="Enter last name">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="frm-section">
+                                <label class="field">
+                                    <input type="email" name="emailaddress" id="emailaddress" class="uit-input" placeholder="Enter email address">
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">
+                                <label class="field">
+                                    <input type="text" name="telephone" id="telephone" class="uit-input" placeholder="Enter telephone number">
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">
+                                <label class="field uit-file">
+                                    <input type="file" class="file-field" id="file" onChange="document.getElementById('file1').value = this.value;">
+                                    <input type="text" class="uit-input" id="file1" placeholder="Choose File"  readonly>
+                                    <button class="uit-button"> Attach CV  </button>
+                                </label>                 
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">
+                                <label class="field uit-file">
+                                    <input type="file" class="file-field" id="files" onChange="document.getElementById('file2').value = this.value;">
+                                    <input type="text" class="uit-input" id="file2" placeholder="Choose File"  readonly>
+                                    <button class="uit-button"> Other Files  </button>
+                                </label>                 
+                            </div><!-- end section -->                                                        
+                            
+                            <div class="frm-section">            
+                                <label class="field">
+                                    <textarea name="message" id="message" placeholder="Other details or comments" class="uit-textarea"></textarea>
+                                    <span class="text-hint"> 
+                                        <strong>Hint:</strong> Please be as detailed as possible!
+                                    </span>                        
+                                </label>
+                            </div><!-- end section -->      
+                            
+                        </div><!-- end .frm-body  section -->
+                        <div class="frm-footer">
+                        	<button type="submit" class="uit-button btn-blue"> Submit Application </button>
+                            <button type="reset" class="uit-button"> Cancel </button>
+                        </div><!-- end .frm-footer section -->   
+                    </form>   		
+                </div><!-- end .goldenforms-container section -->  
+            </div><!-- end .goldenforms-wrapper section -->  
+        </div><!-- end .goldenforms-pro section -->
+        <div></div><!-- end section -->         
+    </body>
+</html>

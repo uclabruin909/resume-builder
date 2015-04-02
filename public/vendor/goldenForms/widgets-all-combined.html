@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<title>Golden Forms Pro - All Widgets</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/goldenforms-pro.css">
+        <link rel="stylesheet" href="css/goldenforms-pro-addons.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="js/jquery-ui-slider-pips.min.js"></script>
+        <script src="js/jquery-ui-monthpicker.min.js"></script>
+        <script src="js/jquery-ui-timepicker.min.js"></script>
+        <script src="js/jquery-ui-touch-punch.min.js"></script>          
+        <script src="js/jquery.spectrum.min.js"></script>
+        <script src="js/jquery.stepper.min.js"></script>
+        
+        <!--[if lte IE 9]>   
+        	<script src="js/jquery.placeholder.min.js"></script>
+        <![endif]-->      
+          
+        <!--[if IE 9]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie9.css">
+        <![endif]-->
+        
+        <!--[if lte IE 8]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie8.css">
+        <![endif]-->
+
+		<script type="text/javascript">
+        
+			$(function() {
+			
+				/*
+				------------------------------------------ 
+				TIME PICKER WIDGETS
+				------------------------------------------ */
+							
+				$('#timepicker1').timepicker({
+					beforeShow: function(input, inst) {
+						var newclass = 'goldenforms-pro'; 
+						var smartpikr = inst.dpDiv.parent();
+						if (!smartpikr.hasClass('goldenforms-pro')){
+							inst.dpDiv.wrap('<div class="'+newclass+'"></div>');
+						}
+					}
+				});
+				
+				$('#timepicker2').timepicker({
+					timeFormat: 'HH:mm:ss:TT',
+					showSecond: true,
+					beforeShow: function(input, inst) {
+						var newclass = 'goldenforms-pro'; 
+						var smartpikr = inst.dpDiv.parent();
+						if (!smartpikr.hasClass('goldenforms-pro')){
+							inst.dpDiv.wrap('<div class="'+newclass+'"></div>');
+						}
+					}
+				});
+				
+				/*
+				------------------------------------------ 
+				DATE + TIME PICKER WIDGETS
+				------------------------------------------ */
+								
+				$('#dtimepicker1').datetimepicker({
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',
+					dateFormat: "yy-mm-dd",
+					timeFormat: "HH:mm:ss",				
+					beforeShow: function(input, inst) {
+						var newclass = 'goldenforms-pro'; 
+						var smartpikr = inst.dpDiv.parent();
+						if (!smartpikr.hasClass('goldenforms-pro')){
+							inst.dpDiv.wrap('<div class="'+newclass+'"></div>');
+						}
+					}
+				});
+				
+				$('#dtimepicker2').datetimepicker({
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',				
+					beforeShow: function(input, inst) {
+						var newclass = 'goldenforms-pro'; 
+						var smartpikr = inst.dpDiv.parent();
+						if (!smartpikr.hasClass('goldenforms-pro')){
+							inst.dpDiv.wrap('<div class="'+newclass+'"></div>');
+						}
+					}
+				});
+				
+				/*
+				------------------------------------------ 
+				DATE PICKER WIDGETS
+				------------------------------------------ */
+								
+				$("#datepicker1").datepicker({
+					numberOfMonths: 1,
+					showOn: 'both',
+					buttonText: '<i class="fa fa-calendar"></i>',					
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',			
+					showButtonPanel: true
+				});
+				
+				$("#datepicker2").datepicker({
+					numberOfMonths: 1,
+					showOn: 'both',
+					buttonText: '<i class="fa fa-calendar"></i>',					
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',			
+					showButtonPanel: true
+				});	
+				
+				/*
+				------------------------------------------ 
+				MONTH PICKER WIDGETS
+				------------------------------------------ */
+								
+				$('.month-picker').monthpicker({
+					showOn: 'both',
+					buttonText: '<i class="fa fa-calendar"></i>',
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',
+					changeYear: false,
+					showButtonPanel: true
+				});	
+																			
+				/*
+				------------------------------------------ 
+				COLOR PICKER WIDGETS
+				------------------------------------------ */
+							
+				$("#typepicker, #pastepicker").spectrum({ 
+					preferredFormat: "hex6",
+					showButtons: false,
+					clickoutFiresChange: true
+				});
+				
+				$("#typepicker, #pastepicker").blur(function() {
+					$(this).spectrum("set", $(this).val());
+				});		
+				
+				/* Bind event handlers for focus and mouseup + show 
+				--------------------------------------------------------------- */		
+				$('#typepicker, #pastepicker').focus(function () { $(this).select(); });
+				$('#typepicker, #pastepicker').mouseup(function (e) { e.preventDefault(); });		
+				$("#typepicker, #pastepicker").show();
+				
+				/*
+				------------------------------------------ 
+				NUMERIC STEPPER WIDGETS
+				------------------------------------------ */				
+				
+				$('#stepper, #stepper2').stepper();	
+				
+				/*
+				------------------------------------------ 
+				UI SLIDER WIDGETS
+				------------------------------------------ */
+								
+				$("#slider").slider({
+					range: "min",
+					animate: true,
+					min: 10,
+					max: 100,
+					value: 80			
+				});
+				
+				$("#slider1").slider({
+					range: true,
+					animate: true,
+					values: [17, 83]
+				});	
+				
+				var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+				var $slidern = $("#monthslider").slider({
+					range: "min",
+					animate: true,
+					min: 0,
+					max: 11,
+					value: 5			
+				});
+				
+				$slidern.slider("pips", { rest: "label", labels: months });
+				$slidern.slider("float" , { labels: months });
+				
+				$("#slider3").slider({
+					range: "max",
+					animate: true,
+					min: 1,
+					max: 10,
+					value: 2
+				});
+				
+				$("#slider3").slider("pips",{ rest: "label" });				
+			
+			});
+        
+        </script>
+    </head>
+    <body class="frm-bg2">
+        <div class="goldenforms-pro">
+            <div class="goldenforms-wrapper">
+                <div class="goldenforms-container gpro-container4">
+                    <form action="" method="post" id="gform-pro">
+                        <div class="frm-header">
+                        	<h4>UI Widgets</h4>
+                        </div><!-- end .frm-header section -->
+                        <div class="frm-body">
+                        
+                            <div class="spacer-b30">
+                                <div class="tagline"><span> Time picker </span></div>
+                            </div>
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="timepicker1" class="uit-input" placeholder="Basic timepicker">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="timepicker2" class="uit-input" placeholder="Options timepicker">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section --> 
+                            
+                            <div class="spacer-t10 spacer-b30">
+                                <div class="tagline"><span> Date-Time picker  </span></div>
+                            </div> 
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="dtimepicker2" class="uit-input" placeholder="Date timepicker">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="dtimepicker1" class="uit-input" placeholder="Date timepicker options">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="spacer-t10 spacer-b30">
+                                <div class="tagline"><span> Date Picker </span></div>
+                            </div>
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">          
+                                    <label class="field prepend-picker-icon">
+                                        <input type="text" id="datepicker1" class="uit-input" placeholder="datepicker" />
+                                    </label>
+                                </div><!-- end section -->
+                                <div class="frm-section colm colm6">           
+                                    <label class="field append-picker-icon">
+                       					<input type="text" id="datepicker2" class="uit-input" placeholder="datepicker" />
+                                    </label>
+                                </div><!-- end section -->                                                                                   
+                        	</div> <!-- end .frm-row section -->
+                            
+                            <div class="spacer-t10 spacer-b30">
+                                <div class="tagline"><span> Month Picker </span></div>
+                            </div>
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field prepend-picker-icon">
+                                        <input type="text" class="uit-input month-picker" placeholder="monthpicker">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field append-picker-icon">
+                                        <input type="text" class="uit-input month-picker" placeholder="monthpicker">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="spacer-t10 spacer-b30">
+                                <div class="tagline"><span> Color Picker </span></div>
+                            </div>                            
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field sfcolor">
+                                        <input type="text" name="typepicker" value="#ff0000" id="typepicker" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field sfcolor">
+                                        <input type="text" name="pastepicker" value="#16d951" id="pastepicker" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="spacer-t10 spacer-b30">
+                                <div class="tagline"><span> Numeric Stepper </span></div>
+                            </div>
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" name="stepper" id="stepper" value="1" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" name="stepper2" id="stepper2" value="0.5" class="uit-input" 
+                                        data-wheel-step="0.5" data-arrow-step="0.1" data-limit="[-10,10]">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="spacer-t10 spacer-b30">
+                                <div class="tagline"><span> UI Slider </span></div>
+                            </div>
+                            
+                            <div class="frm-section spacer-b30">
+                                <div class="slider-wrapper green-slider">
+                                    <div id="slider"></div>
+                                </div><!-- end .slider-wrapper -->
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section spacer-b30">
+                                <div class="slider-wrapper red-slider">
+                                    <div id="slider1"></div>
+                                </div><!-- end .slider-wrapper -->
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section spacer-b40">
+                                <div class="slider-wrapper black-slider">
+                                    <div id="monthslider"></div>
+                                </div><!-- end .slider-wrapper -->
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section spacer-b20">                   
+                                <div class="slider-wrapper">
+                                    <div id="slider3"></div>
+                                </div><!-- end .slider-wrapper -->
+                            </div><!-- end section -->
+                            
+                        </div><!-- end .frm-body  section -->
+                        <div class="frm-footer">
+                        	<button type="submit" class="uit-button btn-blue"> Send Form </button>
+                            <button type="reset" class="uit-button"> Cancel </button>
+                        </div><!-- end .frm-footer section -->   
+                    </form>   		
+                </div><!-- end .goldenforms-container section -->  
+            </div><!-- end .goldenforms-wrapper section -->  
+        </div><!-- end .goldenforms-pro section -->
+    </body>
+</html>

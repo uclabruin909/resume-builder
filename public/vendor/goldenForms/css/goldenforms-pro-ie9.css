@@ -1,0 +1,222 @@
+.goldenforms-pro .uit-select:before, 
+.goldenforms-pro .uit-select:after { display:none!important; }
+.goldenforms-pro .uit-switch > label:before,
+.goldenforms-pro .switch-square > label:before{
+background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc2NDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNERkUxRTIiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c2NDgpIiAvPgo8L3N2Zz4=);
+}
+
+.goldenforms-pro .switch-handle:before{
+background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImczMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxMDAlIiB5MT0iMTAwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNERkUxRTIiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2czMSkiIC8+Cjwvc3ZnPg==);
+}
+
+/* slider fixes 
+---------------------------------------------------------- */
+.goldenforms-pro .text-hint,
+.goldenforms-pro .ui-slider .ui-slider-handle,
+.goldenforms-pro input:checked + .radio-option,
+.goldenforms-pro input:checked + .checkbox-option{
+background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcxMTEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNFMEUzRTQiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cxMTEpIiAvPgo8L3N2Zz4=);
+}
+.goldenforms-pro .ui-slider .ui-slider-handle{ box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5); }
+.goldenforms-pro .ui-slider-vertical .ui-slider-handle:before,
+.goldenforms-pro .ui-slider-horizontal .ui-slider-handle:before{
+background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc2NjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTAwJSIgeTE9IjEwMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRkZGRkZGIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjRUJFQkVCIiBvZmZzZXQ9IjEiLz4KPC9saW5lYXJHcmFkaWVudD4KPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNnNjYwKSIgLz4KPC9zdmc+);
+}
+.goldenforms-pro .ui-slider-vertical .ui-slider-handle:before{
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI0JSIgc3RvcC1jb2xvcj0iI2VkZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2NlZDBkMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+}
+
+.ui-datepicker-buttonpane{ filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#fbfbfb',  EndColorStr='#ededed',  GradientType=0); }
+.ui-datepicker .ui-datepicker-header,
+.ui-timepicker-div .ui-widget-header{ filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#fbfbfb',  EndColorStr='#e6e6e6',  GradientType=0); }
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next{ filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#FFFFFF',  EndColorStr='#F0EDF6',  GradientType=0); }
+.ui-datepicker th { 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#EEEEEE',  EndColorStr='#FFFFFF',  GradientType=0);
+	border-bottom:1px solid #dddddd; 
+}
+
+/* Buttons and selects 
+----------------------------------------------------------- */
+.stepper-btn-wrap,
+.goldenforms-pro .uit-select,
+.goldenforms-pro .uit-button,
+.ui-datepicker-buttonpane button,
+.goldenforms-pro .append-picker-icon button, 
+.goldenforms-pro .prepend-picker-icon button{ filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',  EndColorStr='#E6E6E6',  GradientType=0); }
+
+.goldenforms-pro .uit-select:hover, 
+.goldenforms-pro .uit-select:focus, 
+.goldenforms-pro .uit-select.focus,
+.goldenforms-pro .uit-button:hover, 
+.goldenforms-pro .uit-button:focus,
+.ui-datepicker-buttonpane button:hover,
+.ui-datepicker-buttonpane button:focus,
+.goldenforms-pro .append-picker-icon button:hover, 
+.goldenforms-pro .prepend-picker-icon button:hover{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',  EndColorStr='#dae5ed',  GradientType=0); 
+}
+
+.goldenforms-pro .uit-button:active, 
+.goldenforms-pro .uit-button.active,
+.goldenforms-pro .append-picker-icon button:active, 
+.goldenforms-pro .prepend-picker-icon button:active,
+.goldenforms-pro .append-picker-icon .uit-input:focus + button, 
+.goldenforms-pro .prepend-picker-icon .uit-input:focus + button{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#dddddd',  EndColorStr='#ffffff',  GradientType=0); 
+}
+
+/* Blue 
+-------------------------------------- */
+.ui-datepicker-today a, 
+.ui-datepicker-today a:hover, 
+.ui-datepicker .ui-state-highlight,
+.ui-datepicker .ui-state-active,
+.ui-datepicker .ui-state-active:hover,
+.ui-datepicker .ui-state-highlight:hover,
+.goldenforms-pro .btn-blue,
+.goldenforms-pro .picker-blue button,
+.goldenforms-pro .blue-file .uit-button,
+.goldenforms-pro .widget-blue .uit-button{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#4baadc',  EndColorStr='#074dda',  GradientType=0); 
+}
+
+.goldenforms-pro .btn-blue:hover, 
+.goldenforms-pro .btn-blue.hover, 
+.goldenforms-pro .btn-blue:focus, 
+.goldenforms-pro .btn-blue.focus,
+.goldenforms-pro .picker-blue button:hover,
+.goldenforms-pro .picker-blue button:focus,
+.goldenforms-pro .widget-blue .uit-button:hover,
+.goldenforms-pro .widget-blue .uit-button:focus,
+.goldenforms-pro .blue-file .file-field:hover ~ .uit-button,
+.goldenforms-pro .blue-file .file-field:focus ~ .uit-button{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#2160de',  EndColorStr='#1e55c8',  GradientType=0);	 
+}
+
+.goldenforms-pro .btn-blue:active, 
+.goldenforms-pro .btn-blue.active,
+.goldenforms-pro .picker-blue button:active,
+.goldenforms-pro .widget-blue .uit-button:active,
+.goldenforms-pro .picker-blue .uit-input:focus + button,
+.goldenforms-pro .blue-file .file-field:focus ~ .uit-button { 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#0D4DC1',  EndColorStr='#48a4ff',  GradientType=0); 
+}
+
+/* Green 
+------------------------------------------ */
+.goldenforms-pro .btn-green,
+.goldenforms-pro .picker-green button,
+.goldenforms-pro .green-file .uit-button,
+.goldenforms-pro .widget-green .uit-button{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#a1d254',  EndColorStr='#63a62f',  GradientType=0); 
+}
+
+.goldenforms-pro .btn-green:hover, 
+.goldenforms-pro .btn-green.hover, 
+.goldenforms-pro .btn-green:focus, 
+.goldenforms-pro .btn-green.focus,
+.goldenforms-pro .picker-green button:hover,
+.goldenforms-pro .picker-green button:focus,
+.goldenforms-pro .widget-green .uit-button:hover,
+.goldenforms-pro .widget-green .uit-button:focus,
+.goldenforms-pro .green-file .file-field:hover ~ .uit-button,
+.goldenforms-pro .green-file .file-field:focus ~ .uit-button{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#76b347',  EndColorStr='#5e9e2e',  GradientType=0); 
+}
+
+.goldenforms-pro .btn-green:active, 
+.goldenforms-pro .btn-green.active,
+.goldenforms-pro .picker-green button:active,
+.goldenforms-pro .widget-green .uit-button:active,
+.goldenforms-pro .picker-green .uit-input:focus + button,
+.goldenforms-pro .green-file .file-field:focus ~ .uit-button  { 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#71b533',  EndColorStr='#a7d757',  GradientType=0); 
+}
+
+/* Red 
+--------------------------------------- */
+.goldenforms-pro .btn-red,
+.goldenforms-pro .picker-red button,
+.goldenforms-pro .red-file .uit-button,
+.goldenforms-pro .widget-red .uit-button { 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#fc4138',  EndColorStr='#cf3025',  GradientType=0); 
+}
+
+.goldenforms-pro .btn-red:hover, 
+.goldenforms-pro .btn-red.hover,
+.goldenforms-pro .btn-red:focus, 
+.goldenforms-pro .btn-red.focus,
+.goldenforms-pro .picker-red button:hover,
+.goldenforms-pro .picker-red button:focus,
+.goldenforms-pro .widget-red .uit-button:hover,
+.goldenforms-pro .widget-red .uit-button:focus,
+.goldenforms-pro .red-file .file-field:hover ~ .uit-button,
+.goldenforms-pro .red-file .file-field:focus ~ .uit-button{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#F81003',  EndColorStr='#BC2D21',  GradientType=0); 
+}
+
+.goldenforms-pro .btn-red:active, 
+.goldenforms-pro .btn-red.active,
+.goldenforms-pro .picker-red button:active,
+.goldenforms-pro .widget-red .uit-button:active,
+.goldenforms-pro .picker-red .uit-input:focus + button,
+.goldenforms-pro .red-file .file-field:focus ~ .uit-button { 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DD0000',  EndColorStr='#FF9966',  GradientType=0); 
+}
+
+/* Black 
+----------------------------------------- */
+.goldenforms-pro .btn-black,
+.goldenforms-pro .picker-black button,
+.goldenforms-pro .black-file .uit-button,
+.goldenforms-pro .widget-black .uit-button{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#4F4F4F',  EndColorStr='#181818',  GradientType=0); 
+}
+
+.goldenforms-pro .btn-black:hover, 
+.goldenforms-pro .btn-black.hover,
+.goldenforms-pro .btn-black:focus, 
+.goldenforms-pro .btn-black.focus,
+.goldenforms-pro .picker-black button:hover,
+.goldenforms-pro .picker-black button:focus,
+.goldenforms-pro .widget-black .uit-button:hover,
+.goldenforms-pro .widget-black .uit-button:focus,
+.goldenforms-pro .black-file .file-field:hover ~ .uit-button,
+.goldenforms-pro .black-file .file-field:focus ~ .uit-button{ 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#333333',  EndColorStr='#111111',  GradientType=0); 
+}
+
+.goldenforms-pro .btn-black:active, 
+.goldenforms-pro .btn-black.active,
+.goldenforms-pro .picker-black button:active,
+.goldenforms-pro .widget-black .uit-button:active,
+.goldenforms-pro .picker-black .uit-input:focus + button,
+.goldenforms-pro .black-file .file-field:focus ~ .uit-button { 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#070707',  EndColorStr='#444444',  GradientType=0); 
+}
+
+/* notification alerts */
+.goldenforms-pro .alert-info { filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#E7F2FE',  EndColorStr='#C7E1FC',  GradientType=0); }
+.goldenforms-pro .alert-success {  filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#E4FBCE',  EndColorStr='#CEF7A6',  GradientType=0); }
+.goldenforms-pro .alert-warning { filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#FFFFC6',  EndColorStr='#FAE49C',  GradientType=0); }
+.goldenforms-pro .alert-error {	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#FFE7D3',  EndColorStr='#FFD1A8',  GradientType=0);	 }
+
+/* captcha + reload button */
+.goldenforms-pro .captcode,
+.goldenforms-pro .captcode:hover,
+.goldenforms-pro .captcode:focus,
+.goldenforms-pro .captcode:active{
+	padding:0;
+	text-shadow:none!important;
+	background:#EFEFEF!important;
+	-webkit-box-shadow: none!important;
+	-moz-box-shadow: none!important;
+	box-shadow: none!important;
+	filter:none;
+}
+
+.goldenforms-pro .frm-footer,
+.goldenforms-pro .frm-header{
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#FBFBFB',  EndColorStr='#E6E6E6',  GradientType=0);
+}

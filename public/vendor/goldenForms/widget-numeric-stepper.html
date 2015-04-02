@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<title>Golden Forms Pro - Numeric Stepper Widget</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/goldenforms-pro.css">
+        <link rel="stylesheet" href="css/goldenforms-pro-addons.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.stepper.min.js"></script>
+        
+        <!--[if lte IE 9]>   
+        	<script src="js/jquery.placeholder.min.js"></script>
+        <![endif]-->      
+          
+        <!--[if IE 9]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie9.css">
+        <![endif]-->
+        
+        <!--[if lte IE 8]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie8.css">
+        <![endif]-->
+
+		<script type="text/javascript">
+		
+			$(function() {
+			
+				$('#stepper, #stepper2').stepper();				
+				$('#stepper3').stepper({
+					wheel_step: 1,
+					arrow_step: 0.2
+				});
+	
+				$('#stepper4').stepper({ 
+					UI: false,
+					limit: [0,],
+					allowWheel :false,
+					onStep: function(val, up){
+						$(this).val(function(index, val) {
+							//return val.replace(/^\d$/,'0$&');
+							return $.trim(val).length === 1 ? '0' + val : val;
+						});	
+					}				
+				});
+				
+				$('#stepper5').stepper({ 
+					limit: [0, 10] 
+				});
+				
+				$('#stepper6').stepper({ 
+					limit: [10,] 
+				});							
+			
+				/* Custom stepper value || add px on each value
+				------------------------------------------------- */		
+				$('#bordersize, #cornersize').stepper({ 
+					limit: [0,],
+					allowWheel :false,
+					onStep: function(val, up){
+						$(this).val(function(index, val) {
+							return val + "px";
+						});	
+					}
+				});				
+			
+			});
+			
+        </script>
+    </head>
+    <body class="frm-bg2">
+        <div class="goldenforms-pro">
+            <div class="goldenforms-wrapper">
+                <div class="goldenforms-container gpro-container4">
+                    <form action="" method="post" id="gform-pro">
+                        <div class="frm-header">
+                        	<h4>Numeric Stepper Widget</h4>
+                        </div><!-- end .frm-header section -->
+                        <div class="frm-body">
+                        
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label for="stepper" class="field-label">Default Settings</label>
+                                    <label class="field">
+                                        <input type="text" name="stepper" id="stepper" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label for="stepper2" class="field-label">HTML5 Data Attributes</label>
+                                    <label class="field">
+                                        <input type="text" name="stepper2" id="stepper2" class="uit-input" 
+                                        data-wheel-step="0.5" data-arrow-step="0.1" data-limit="[-10,10]">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label for="stepper3" class="field-label">Mouse Wheel  + Arrows Keys</label>
+                                    <label class="field">
+                                        <input type="text" name="stepper3" id="stepper3" value="3.6" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label for="stepper4" class="field-label">Disable Mouse Wheel</label>
+                                    <label class="field">
+                                        <input type="text" name="stepper4" id="stepper4" value="00" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section --> 
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label for="stepper5" class="field-label">Limit (Min 0 : Max 10)</label>
+                                    <label class="field">
+                                        <input type="text" name="stepper5" id="stepper5" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label for="stepper6" class="field-label">Limit Min Only</label>
+                                    <label class="field">
+                                        <input type="text" name="stepper6" id="stepper6" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->                                                            
+                        
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label for="bordersize" class="field-label">Border Size</label>
+                                    <label class="field">
+                                        <input type="text" name="bordersize" id="bordersize" value="12px" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label for="cornersize" class="field-label">Corner Size</label>
+                                    <label class="field">
+                                        <input type="text" name="cornersize" id="cornersize" value="12px" class="uit-input">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->                                                                                   
+                            
+                        </div><!-- end .frm-body  section -->
+                        <div class="frm-footer">
+                        	<button type="submit" class="uit-button btn-blue"> Send Form </button>
+                            <button type="reset" class="uit-button"> Cancel </button>
+                        </div><!-- end .frm-footer section -->   
+                    </form>   		
+                </div><!-- end .goldenforms-container section -->  
+            </div><!-- end .goldenforms-wrapper section -->  
+        </div><!-- end .goldenforms-pro section -->
+    </body>
+</html>

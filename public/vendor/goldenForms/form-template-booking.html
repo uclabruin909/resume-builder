@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<title>Golden Forms Pro - Booking Form </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/goldenforms-pro.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.min.js"></script>  
+                
+        <!--[if lte IE 9]>
+        	<script src="js/jquery.placeholder.min.js"></script>
+        <![endif]-->      
+          
+        <!--[if IE 9]>
+        	<link rel="stylesheet" href="css/goldenforms-pro-ie9.css">
+        <![endif]-->
+        
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/goldenforms-pro-ie8.css">
+            <script src="js/goldenforms-pro-ie8.js"></script>
+        <![endif]-->
+        
+		<script type="text/javascript">
+		
+			$(function() {
+			
+				$("#arrivalDate").datepicker({
+					defaultDate: "+1w",
+					changeMonth: false,
+					numberOfMonths: 1,
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',
+					onClose: function( selectedDate ) {
+						$("#departureDate").datepicker("option", "minDate", selectedDate);
+					}
+				});
+				
+				$("#departureDate").datepicker({
+					defaultDate: "+1w",
+					changeMonth: false,
+					numberOfMonths: 1,
+					prevText: '<i class="fa fa-chevron-left"></i>',
+					nextText: '<i class="fa fa-chevron-right"></i>',			
+					onClose: function( selectedDate ) {
+						$("#arrivalDate").datepicker("option", "maxDate", selectedDate);
+					}
+				});
+			
+			});
+			
+        </script>        
+        
+    </head>
+    <body class="frm-bg2">
+        <div class="goldenforms-pro">
+            <div class="goldenforms-wrapper">
+                <div class="goldenforms-container gpro-container4">
+                    <form action="" method="post" id="gform-pro" enctype="multipart/form-data">
+                        <div class="frm-header">
+                        	<h4>Booking Form</h4>
+                        </div><!-- end .frm-header section -->
+                        <div class="frm-body">
+                        
+                            <div class="spacer-b30">
+                                <div class="tagline"><span> Personal Details </span></div>
+                            </div>                        
+                        
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" name="firstname" id="firstname" class="uit-input" placeholder="Enter first name">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" name="lastname" id="lastname" class="uit-input" placeholder="Enter last name">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="email" name="emailaddress" id="emailaddress" class="uit-input" placeholder="Email address">
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" name="telephone" id="telephone" class="uit-input" placeholder="Telephone contact">
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->
+                            
+                            <div class="spacer-t10 spacer-b30">
+                                <div class="tagline"><span> Booking Details  </span></div>
+                            </div>
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">         
+                                    <label class="field uit-select">
+                                        <select id="hotel" name="hotel">
+                                            <option value="">Select hotel type</option>
+                                            <option value="3 Star"> 3 Star </option>
+                                            <option value="4 Star"> 4 Star </option>
+                                            <option value="5 Star"> 5 Star </option>
+                                            <option value="other"> Other </option>
+                                        </select>
+                                        <i class="select-arrow"></i>                        
+                                    </label>
+                                </div><!-- end section -->
+                                <div class="frm-section colm colm6">         
+                                    <label class="field uit-select">
+                                        <select id="purpose" name="purpose">
+                                            <option value="">Purpose of booking</option>
+                                            <option value="official"> Official Function</option>
+                                            <option value="wedding"> Wedding Celemony </option>
+                                            <option value="birthday"> Birth Day Party </option>
+                                            <option value="graduation"> Graduation Party </option>
+                                            <option value="other"> Other Function </option>
+                                        </select>
+                                        <i class="select-arrow"></i>                        
+                                    </label>
+                                </div><!-- end section -->                                                                                   
+                        	</div> <!-- end .frm-row section --> 
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">         
+                                    <label class="field uit-select">
+                                        <select id="facility" name="facility">
+                                            <option value="">Select facility</option>
+                                            <option value="rooms"> Rooms </option>
+                                            <option value="party venue"> Party Venue </option>
+                                            <option value="meeting hall"> Meeting Hall </option>
+                                            <option value="conference hall"> Conference Room</option>
+                                            <option value="gardens"> Gardens</option>
+                                        </select>
+                                        <i class="select-arrow"></i>                        
+                                    </label>
+                                </div><!-- end section -->
+                                <div class="frm-section colm colm6">         
+                                    <label class="field">
+                                        <input type="text" name="attendance" id="attendance" class="uit-input" placeholder="Attendance Number">
+                                    </label>
+                                </div><!-- end section -->                                                                                   
+                        	</div> <!-- end .frm-row section -->
+                            
+                            <div class="frm-row">
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="arrivalDate" name="arrivalDate" class="uit-input" placeholder="Booking starts" readonly>
+                                    </label>
+                                </div><!-- end section -->
+                                
+                                <div class="frm-section colm colm6">
+                                    <label class="field">
+                                        <input type="text" id="departureDate" name="departureDate" class="uit-input" placeholder="Booking ends" readonly>
+                                    </label>
+                                </div><!-- end section -->
+                            </div> <!-- end .frm-row section -->                            
+                            
+                            <div class="frm-section">            
+                                <label class="field">
+                                    <textarea name="message" id="message" placeholder="Other details or comments" class="uit-textarea"></textarea>
+                                    <span class="text-hint"> 
+                                        <strong>Hint:</strong> Please be as detailed as possible!
+                                    </span>                        
+                                </label>
+                            </div><!-- end section -->
+                            
+                            <div class="frm-section">
+                                <div class="option-group field">
+                                    <label class="uit-option gblock">
+                                        <input type="checkbox" id="terms" name="terms" value="terms">
+                                        <span class="checkbox-option"></span> I agree to the terms and conditions
+                                    </label>
+                                </div><!-- end .option-group section -->
+                            </div><!-- end section -->                                  
+                            
+                        </div><!-- end .frm-body  section -->
+                        <div class="frm-footer">
+                        	<button type="submit" class="uit-button btn-blue"> Submit Booking </button>
+                            <button type="reset" class="uit-button"> Cancel </button>
+                        </div><!-- end .frm-footer section -->   
+                    </form>   		
+                </div><!-- end .goldenforms-container section -->  
+            </div><!-- end .goldenforms-wrapper section -->  
+        </div><!-- end .goldenforms-pro section -->
+        <div></div><!-- end section -->         
+    </body>
+</html>
