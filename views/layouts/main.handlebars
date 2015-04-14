@@ -1,445 +1,167 @@
-
+<!DOCTYPE html>
 <html>
 	
 	<head>
 		<title>ResForm</title>
-		<!-- build:css(assets) styles/base.css -->
+
 		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="vendor/goldenForms/css/goldenforms-pro.css">
 		<link rel="stylesheet" type="text/css" href="vendor/goldenForms/css/goldenforms-pro-addons.css">
 
 		<link rel="stylesheet" type="text/css" href="vendor/goldenForms/css/font-awesome.min.css">
 
-        <link rel="stylesheet" type="text/css" href="styles/form.css">
-        <!-- endbuild -->
+
+		<!--[if IE 9]>
+        	<link rel="stylesheet" href="vendor/goldenForms/css/goldenforms-pro-ie9.css">
+        <![endif]-->
+        
+        <!--[if lte IE 8]>
+        	<link rel="stylesheet" href="vendor/goldenForms/css/goldenforms-pro-ie8.css">
+        <![endif]-->
+        
+        <link rel="stylesheet" type="text/css" href="styles/base.css">
 	</head>
 
 		<body>
 
-			<!--CONTAINER SECTION START -->
-			<div class="container">
-				
-				<div id="example-manipulation">
-				    <h3>General Info</h3>
-				    <section>
-						<div class="goldenforms-pro">
-						            <div class="goldenforms-wrapper">
-						                <div class="goldenforms-container gpro-container4">
-						                    <form action="" method="post" id="gform-pro" enctype="multipart/form-data">
-						                        <div class="frm-header">
-						                        	<h4>General Information</h4>
-						                        </div><!-- end .frm-header section -->
-						                        <div class="frm-body">
-						                        
-						                            <div class="frm-row">
-						                                <div class="frm-section colm colm6">
-						                                    <div class="profile-avatar">
-											                    <img class="img-responsive" src="http://mms.businesswire.com/media/20141013006071/en/436203/4/Kubota_M7_For_Release.jpg" alt="profile picture">
-											                </div>
-						                                </div><!-- end section -->
-						                                
-						                                <div class="frm-section colm colm6">
-						                                <label class="field uit-file">
-						                                    <input type="file" class="file-field" id="file" onChange="document.getElementById('file1').value = this.value;">
-						                                    <input type="text" class="uit-input" id="file1" placeholder="Select profile pic"  readonly>
-						                                    <button class="uit-button"> Choose File  </button>
-						                                </label>                 
-						                            </div><!-- end section -->
-						                            </div> <!-- end .frm-row section --> 
-						                            
 
-						                            <div class="spacer-b30">
-						                                <div class="tagline"><span> General Info</span></div>
-						                            </div>                        
-						                        
-						                            <div class="frm-row general-info">
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="text" name="firstName" id="firstName" class="uit-input" placeholder="Enter First Name">
+		<!--header start-->
+		    <header class="head-section">
+		      <div class="navbar navbar-default navbar-static-top container">
+		          <div class="navbar-header">
+		              <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		              </button>
+		              <a class="navbar-brand" href="index.html">Resume<span>Builder</span></a>
+		          </div>
+		          <div class="navbar-collapse collapse">
+		              <ul class="nav navbar-nav">
+		                  <li class="dropdown">
+		                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+		                      "dropdown" data-toggle="dropdown" href="index.html">Home <i class="fa fa-angle-down"></i>
+		                      </a>
+		                      <ul class="dropdown-menu">
+		                          <li>
+		                              <a href="product.html">Product</a>
+		                          </li>
+		                          <li>
+		                              <a href="product.html">Product Seq-slider1</a>
+		                          </li>
+		                          <li>
+		                              <a href="product.html">Product</a>
+		                          </li>
+		                      </ul>
+		                  </li>
+		                  <li class="dropdown">
+		                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+		                      "dropdown" data-toggle="dropdown" href="#">Product <i class="fa fa-angle-down"></i>
+		                      </a>
+		                      <ul class="dropdown-menu">
+		                          <li>
+		                              <a href="product.html">Product</a>
+		                          </li>
+		                          <li>
+		                              <a href="product.html">Product</a>
+		                          </li>
+		                          <li>
+		                              <a href="form.html">Form</a>
+		                          </li>
+		                          <li>
+		                              <a href="table.html">Table</a>
+		                          </li>
+		                          <li class="dropdown-submenu">
+		                              <a href="#" tabindex="-1">More options</a>
+		                              <ul class="dropdown-menu">
+		                                  <li>
+		                                      <a href="#" tabindex="-1">Second level</a>
+		                                  </li>
+		                                  <li class="dropdown-submenu">
+		                                      <a href="#">Even More..</a>
+		                                      <ul class="dropdown-menu">
+		                                          <li>
+		                                              <a href="#">3rd level</a>
+		                                          </li>
+		                                          <li>
+		                                              <a href="#">3rd level</a>
+		                                          </li>
+		                                      </ul>
+		                                  </li>
+		                                  <li>
+		                                      <a href="#">Second level</a>
+		                                  </li>
+		                                  <li>
+		                                      <a href="#">Second level</a>
+		                                  </li>
+		                              </ul>
+		                          </li>
+		                      </ul>
+		                  </li>
+		                  
+
+		                  <li>
+		                      <a href="contact.html">Contact</a>
+		                  </li>
+		                  <li>
+		                    <a href="admin.html">ADMIN</a>
+		                  </li>
+		              </ul>
+		          </div>
+		      </div>
+		    </header>
+		    <!--header end-->
+
+
+
+			{{!--MAIN CONTAINTER SECTION START --}}
+			<div id="mainContent" class="container">
+
+				{{{body}}}
 
-							                                    <span class="field-icon"><i class="fa fa-user"></i></span>                    
-							                                </label>
-						                                </div><!-- end section -->
-						                                
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="text" name="lastName" id="lastName" class="uit-input" placeholder="Enter Last Name">
 
-							                                    <span class="field-icon"><i class="fa fa-user"></i></span>                    
-							                                </label>
-						                                </div><!-- end section -->
 
-
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="email" name="email" id="email" class="uit-input" placeholder="Email Address">
-							                                  
-							                                    <span class="field-icon"><i class="fa fa-envelope"></i></span>                      
-							                                </label>
-						                                </div><!-- end section -->
-
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="phone" name="phone" id="phone" class="uit-input" placeholder="Phone Number">
-							                                  
-							                                    <span class="field-icon"><i class="fa fa-phone"></i></span>                      
-							                                </label>
-						                                </div><!-- end section -->
-
-
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="jobTitle" name="jobTitle" id="jobTitle" class="uit-input" placeholder="Current Position">
-							                                  
-							                                    <span class="field-icon"><i class="fa fa-suitcase"></i></span>                      
-							                                </label>
-						                                </div><!-- end section -->
-
-
-						                            </div> <!-- end .frm-row section -->
-
-
-
-
-						                            <div class="spacer-b30">
-						                                <div class="tagline"><span> Social Contacts</span></div>
-						                            </div>                        
-						                        
-						                            <div class="frm-row general-info">
-
-
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="text" name="linkedinInfo" id="linkedinInfo" class="uit-input" placeholder="LinkedIn">
-							                                  
-							                                    <span class="field-icon"><i class="fa fa-linkedin"></i></span>                      
-							                                </label>
-						                                </div><!-- end section -->
-
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="text" name="facebookInfo" id="facebookInfo" class="uit-input" placeholder="Facebook">
-
-							                                    <span class="field-icon"><i class="fa fa-facebook-square"></i></span>                    
-							                                </label>
-						                                </div><!-- end section -->
-						                                
-
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="text" name="behanceInfo" id="behanceInfo" class="uit-input" placeholder="Behance">
-							                                  
-							                                    <span class="field-icon"><i class="fa fa-behance"></i></span>                      
-							                                </label>
-						                                </div><!-- end section -->
-
-						                                <div class="frm-section colm colm6">
-						                                    <label class="field prepend-icon">
-							                                    <input type="text" name="twitterInfo" id="twitterInfo" class="uit-input" placeholder="Twitter">
-							                                  
-							                                    <span class="field-icon"><i class="fa fa-twitter"></i></span>                      
-							                                </label>
-						                                </div><!-- end section -->
-
-
-						                            </div> <!-- end .frm-row section -->
-
-
-
-
-
-
-
-
-
-
-
-						                   
-
-
-						                            <div class="spacer-b30">
-						                                <div class="tagline"><span> Personal Statement </span></div>
-						                            </div>                        
-						                        
-						                            <div class="frm-row">
-						                                <div class="frm-section">            
-						                                <label class="field personal-statement">
-						                                    <textarea name="message" id="message" placeholder="Type in a personal statement" class="uit-textarea"></textarea>
-						                                    <span class="text-hint"> 
-						                                        <strong>Hint:</strong> Tell your prospective employer a little about you.
-						                                    </span>                        
-						                                </label>
-							                            </div><!-- end section -->
-						                            </div> <!-- end .frm-row section -->
-
-
-						                        </div><!-- end .frm-body  section -->
-
-
-
-						                    </form>   
-
-						                </div><!-- end .goldenforms-container section -->  
-						            </div><!-- end .goldenforms-wrapper section -->  
-						        </div><!-- end .goldenforms-pro section -->
-
-				    </section>
-
-
-<!--EDUCATION SECTION BEGIN-->
-				    
-				    <h3>Education</h3>
-				    <section>
-						<div class="goldenforms-pro">
-				            <div class="goldenforms-wrapper">
-				                <div class="goldenforms-container gpro-container4">
-				                    <form action="" method="post" id="gform-pro" enctype="multipart/form-data">
-				                        <div class="frm-header">
-				                        	<h4>EDUCATION</h4>
-				                        </div><!-- end .frm-header section -->
-
-
-				                        <div class="frm-body">
-				                        
-
-
-											<!--BEGINNING OF COMPANY SECTION -->
-											<div class="education-Section">
-					                            <div class="spacer-b30">
-					                                <div class="tagline"><span> School</span></div>
-					                            </div>                        
-					                        
-					                            <div class="frm-row general-info">
-					                                <div class="frm-section colm colm6">
-					                                    <label class="field prepend-icon">
-						                                    <input type="text" name="companyName" id="schoolName" class="uit-input" placeholder="School Name">
-						                                    
-						                                    <span class="field-icon"><i class="fa fa-user"></i></span>                    
-						                                </label>
-					                                </div><!-- end section -->
-					                                
-					                                <div class="frm-section colm colm6">
-					                                    <label class="field prepend-icon">
-						                                    <input type="text" name="positionTitle" id="certificateTitle" class="uit-input" placeholder="Certificate Title">
-
-						                                    <span class="field-icon"><i class="fa fa-user"></i></span>                    
-						                                </label>
-					                                </div><!-- end section -->
-
-					                            </div> <!-- end .frm-row section -->
-
-
-												<div class="frm-row">
-					                                <div class="frm-section colm colm6">          
-					                                    <label class="field prepend-picker-icon picker-green">
-					                                        <input type="text" id="datepicker1" class="uit-input" placeholder="Start Date">
-					                                        <button type="button" class="ui-datepicker-trigger">
-					                                        	<i class="fa fa-calendar"></i>
-					                                        </button>
-					                                    </label>
-					                                </div><!-- end section -->
-					                                <div class="frm-section colm colm6">           
-					                                    <label class="field append-picker-icon picker-red">
-					                       					<input type="text" id="datepicker2" class="uit-input" placeholder="Completed Date">
-					                       					<button type="button" class="ui-datepicker-trigger">
-					                                        	<i class="fa fa-calendar"></i>
-					                                        </button>
-					                                    </label>
-					                                </div><!-- end section -->                                                                                      
-					                        	</div> <!-- end .frm-row section -->
-
-
-					                            <div class="frm-row">
-					                                <div class="frm-section">            
-					                                <label class="field course-description">
-					                                    <textarea name="course-description" id="course-description" placeholder="Type in the courses taken" class="uit-textarea"></textarea>
-					                                    <span class="text-hint"> 
-					                                        <strong>Hint:</strong> Describe courses taken.
-					                                    </span>                        
-					                                </label>
-						                            </div><!-- end section -->
-					                            </div> <!-- end .frm-row section -->
-
-						                        </div><!-- end .frm-body  section -->
-	
-						                        </div>
-
-						                    </form>   
-
-
-
-
-
-						                        <div class="frm-footer" style="text-align: right" >
-						                            <button type="button" class="uit-button btn-blue"> Add School++ </button>
-
-					                            </div><!-- end .frm-footer section -->   
-
-
-
-						                </div><!-- end .goldenforms-container section -->  
-						            </div><!-- end .goldenforms-wrapper section -->  
-						        </div><!-- end .goldenforms-pro section -->
-				    </section>
-<!--/ END EDUCATION SECTION -->
-
-
-
-
-<!--WORK SECTION BEGIN-->
-				    <h3>Work Experience</h3>
-				    <section>
-				        <div class="goldenforms-pro">
-						            <div class="goldenforms-wrapper">
-						                <div class="goldenforms-container gpro-container4">
-						                    <form action="" method="post" id="gform-pro" enctype="multipart/form-data">
-						                        <div class="frm-header">
-						                        	<h4>Work Experience</h4>
-						                        </div><!-- end .frm-header section -->
-
-
-						                        <div class="frm-body">
-						                        
-
-
-													<!--BEGINNING OF COMPANY SECTION -->
-													<div class="companySection">
-							                            <div class="spacer-b30">
-							                                <div class="tagline"><span> Company</span></div>
-							                            </div>                        
-							                        
-							                            <div class="frm-row general-info">
-							                                <div class="frm-section colm colm6">
-							                                    <label class="field prepend-icon">
-								                                    <input type="text" name="companyName" id="companyName" class="uit-input" placeholder="Company Name">
-								                                    
-								                                    <span class="field-icon"><i class="fa fa-user"></i></span>                    
-								                                </label>
-							                                </div><!-- end section -->
-							                                
-							                                <div class="frm-section colm colm6">
-							                                    <label class="field prepend-icon">
-								                                    <input type="text" name="positionTitle" id="positionTitle" class="uit-input" placeholder="Position Title">
-
-								                                    <span class="field-icon"><i class="fa fa-user"></i></span>                    
-								                                </label>
-							                                </div><!-- end section -->
-
-							                            </div> <!-- end .frm-row section -->
-
-
-														<div class="frm-row">
-							                                <div class="frm-section colm colm6">          
-							                                    <label class="field prepend-picker-icon picker-green">
-							                                        <input type="text" id="datepicker1" class="uit-input" placeholder="Start Date">
-							                                        <button type="button" class="ui-datepicker-trigger">
-							                                        	<i class="fa fa-calendar"></i>
-							                                        </button>
-							                                    </label>
-							                                </div><!-- end section -->
-							                                <div class="frm-section colm colm6">           
-							                                    <label class="field append-picker-icon picker-red">
-							                       					<input type="text" id="datepicker2" class="uit-input" placeholder="End Date">
-							                       					<button type="button" class="ui-datepicker-trigger">
-							                                        	<i class="fa fa-calendar"></i>
-							                                        </button>
-							                                    </label>
-							                                </div><!-- end section -->                                                                                      
-							                        	</div> <!-- end .frm-row section -->
-
-
-							                            <div class="frm-row">
-							                                <div class="frm-section">            
-							                                <label class="field job-description">
-							                                    <textarea name="job-description" id="job-description" placeholder="Type in the job description" class="uit-textarea"></textarea>
-							                                    <span class="text-hint"> 
-							                                        <strong>Hint:</strong> Explain the positions responsibilities
-							                                    </span>                        
-							                                </label>
-								                            </div><!-- end section -->
-							                            </div> <!-- end .frm-row section -->
-
-						                            </div>
-						                            <!--END OF COMPANY SECTION -->
-
-
-
-
-
-						                        </div><!-- end .frm-body  section -->
-	
-
-
-						                    </form>   
-
-
-
-
-
-						                        <div class="frm-footer" style="text-align: right" >
-						                            <button type="button" class="uit-button btn-blue"> Add Work++ </button>
-
-					                            </div><!-- end .frm-footer section -->   
-
-
-
-						                </div><!-- end .goldenforms-container section -->  
-						            </div><!-- end .goldenforms-wrapper section -->  
-						        </div><!-- end .goldenforms-pro section -->
-				    </section>
-	<!-- /WORK SECTION END-->			
-
-
-				    
-
-				    </div>
 			</div>
+			{{!--MAIN CONTAINTER SECTION END --}}
 
 
-			<!--END CONTAINER SECTION -->
-
-			{{body}}
-
-
+			
 
 
 
-			<!-- build:js(assets) scripts/scripts.js -->
+
+
+
 		<script type="text/javascript" src="scripts/jquery.js"></script>
 		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
-
-		<script src="vendor/goldenForms/scripts/jquery-ui-1.10.4.custom.min.js"></script>
-		<script src="vendor/goldenForms/scripts/jquery-ui-slider-pips.min.js"></script>
-        <script src="vendor/goldenForms/scripts/jquery-ui-touch-punch.min.js"></script>
+        <script src="vendor/goldenForms/js/jquery-ui-touch-punch.min.js"></script>
         <script type="text/javascript" src="scripts/jquery.steps.js"></script>
+		<script type="text/javascript" src="scripts/jquery.fileupload.js"></script>
 
-        
-        <script type="text/javascript" src="js/datepicker.js"></script>
-		
+
+		<script src="vendor/goldenForms/js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="vendor/goldenForms/js/jquery-ui-slider-pips.min.js"></script>
+		<script type="text/javascript" src="scripts/resumeBuilder.js"></script>
 
 		<script type="text/javascript">
 
-			$(function() {
+		$(document).ready(function() {
 
-				$("#example-manipulation").steps({
-				    headerTag: "h3",
-				    bodyTag: "section",
-				    enableAllSteps: true ,
-				    enablePagination: false,
-				    cssClass: 'wizard',
-				    stepsOrientation: $.fn.steps.stepsOrientation.horizontal,
+			$("div.resForm-tab-menu>div.list-group>a").click(function(e) {
+		        e.preventDefault();
+		        $(this).siblings('a.active').removeClass("active");
+		        $(this).addClass("active");
+		        var index = $(this).index();
+		        $("div.resForm-tab>div.resForm-tab-content").removeClass("active");
+		        $("div.resForm-tab>div.resForm-tab-content").eq(index).addClass("active");
+		    });
 
-				    labels: {
-				    	current: '',
-				    	next: 'Next'
-				    }
 
-				});
+		});
 
-			});
-			
 		</script>
-		<!-- endbuild -->
+
+	
 
 	</body>
 
