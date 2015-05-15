@@ -6,10 +6,8 @@
 
 @import "layout"; //basic layout style rules
 
-@import "sections/form";  // form style rules
+@import "sections/header";  // form style rules
 
-@import "sections/genInfo";  // General info sectionform style rules
+@import "sections/admin";  // form style rules
 
-@import "sections/educationInfo";  // Education form section style rules
-
-@import "sections/workInfo";  // Work Exp form section style rules
+@import "sections/forms";  // form style rules

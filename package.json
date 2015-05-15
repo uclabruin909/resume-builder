@@ -3,8 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "blueimp-file-upload-expressjs": "^0.3.2",
+    "body-parser": "^1.12.2",
     "express": "~3.4.0",
-    "express3-handlebars": "0.4.x"
+    "express3-handlebars": "0.4.x",
+    "l": "0.0.1",
+    "mongoose": "^4.0.1",
+    "multipart": "^0.1.5"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

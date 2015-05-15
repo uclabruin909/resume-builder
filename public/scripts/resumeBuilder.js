@@ -8,22 +8,68 @@ $(document).ready(function() {
 
 			var addSchoolBut = $('#addSchool'),
 				addWorkBut = $('#addWork'),
-				educationArea = $('#educationForm'),
-				jobArea =  $('#jobForm'),
-				educationForm = educationArea.html(),
-				jobForm = jobArea.html(),
+				delSchoolBut = $('#delSchool'),
+				delWorkBut = $('#delWork'),
+				educationArea = $('#educationInfo'),
+				jobArea =  $('#workInfo'),
+				educationForm = $('#educationForm').html(),
+				jobForm = $('#workForm').html(),
 
 
 				_addSchool = function() {
 
-					educationArea.append(educationForm);
+					educationArea.prepend(educationForm);
+				},
+
+				_delSchool = function() {
+
+					var schools = $('.school');
+
+					(function delLastSchool() {
+
+						var schoolNum = schools.length;
+
+						if (schoolNum !== 1) {
+							var lastSchool = schools[schoolNum-1];
+							lastSchool.remove();
+							return true;
+						}
+						else{
+							return false;
+						}
+						
+
+					}());
+
 				},
 
 				_addWork = function() {
 
-					jobArea.append(jobForm);
+					jobArea.prepend(jobForm);
+
+				},
+
+				_delWork = function() {
+
+					var works = $('.work');
+
+					(function delLastWork() {
+
+						var workNum = works.length;
+						if (workNum !== 1) {
+							var lastWork = works[workNum-1];
+							lastWork.remove();
+							return true;
+						}
+						else{
+							return false;
+						}
+						
+
+					}());
 
 				};
+				
 
 
 				var init = function() {
@@ -31,8 +77,17 @@ $(document).ready(function() {
 						_addSchool();
 					});
 
+					delSchoolBut.on('click', function() {
+						_delSchool();
+					});
+
 					addWorkBut.on('click', function() {
 						_addWork();
+					});
+
+
+					delWorkBut.on('click', function() {
+						_delWork();
 					});
 
 				};
@@ -50,26 +105,30 @@ $(document).ready(function() {
 	var resBuilder = (function() {
 
 		var masterInfo = {},
-			renderBut = $('#renderBut'),
-			personalStateArea = $('#message'),
+			saveBut = $('#saveRes'),
+
+			_getResumeName = function() {
+
+				var resName = $('#resumeName').val();
+				return resName;
+
+			},
 
 			_getGenInfo = function() {
 
 				var info = {
-					firstName: null,
-					lastName: null,
-					email: null,
-					phone: null,
-					jobTitle: null,
+					firstName: '',
+					lastName: '',
+					position: '',
+					personalStatement: '',
 
 				};
 
 				var retrieveInfo = (function() {
 					info.firstName = $('#firstName').val();
 					info.lastName = $('#lastName').val();
-					info.email = $('#email').val();
-					info.phone = $('#phone').val();
-					info.jobTitle = $('#jobTitle').val();
+					info.position = $('#position').val();
+					info.personalStatement = $('#personalStatement').val();
 				}());
 
 				console.log(info);
@@ -77,19 +136,23 @@ $(document).ready(function() {
 
 			},
 
-			_getSocialInfo = function() {
+			_getContactInfo = function() {
 
 				var info = {
-					linkedin: null,
-					facebook: null,
-					behance: null,
-					twitter: null,
+					email: '',
+					phone: '',
+					website: '',					
+					linkedin: '',
+					facebook: '',
+					twitter: '',
 				};
 
 				var retrieveInfo = (function() {
-					info.linkedin = $('#linkedin').val();
+					info.email = $('#email').val();
+					info.phone = $('#phoneNumber').val();
+					info.website = $('#website').val();
+					info.linkedin = $('#linkedIn').val();
 					info.facebook = $('#facebook').val();
-					info.behance = $('#behance').val();
 					info.twitter = $('#twitter').val();
 				}());
 
@@ -97,35 +160,28 @@ $(document).ready(function() {
 			},
 
 
-			_getPeronalState = function() {
-
-				var personStatement = personalStateArea.val();
-				return personStatement;
-
-			},
-
 
 			_getSchoolInfo = function() {
 
 				var schoolList = [];
-				var schools = $('.education-section');
+				var schools = $('.school');
 
 				for (var i=0; i<schools.length; i++) {
 					var baseSchool = $(schools[i]);
 					
 					var schoolInfo = {
-						schoolName: null,
-						certificate: null,
-						startDate: null,
-						completedDate: null,
-						courseDesc: null,
+						schoolName: '',
+						certificate: '',
+						startDate: '',
+						endDate: '',
+						courseDesc: '',
 					};
 
 					schoolInfo.schoolName = baseSchool.find('#schoolName').val();
 					schoolInfo.certificate = baseSchool.find('#certificateTitle').val();
 					schoolInfo.startDate = baseSchool.find('#startDate').val();
-					schoolInfo.completedDate = baseSchool.find('#completeDate').val();
-					schoolInfo.courseDesc = baseSchool.find('#course-description').val();
+					schoolInfo.endDate = baseSchool.find('#endDate').val();
+					schoolInfo.courseDesc = baseSchool.find('#courseDescription').val();
 
 					schoolList.push(schoolInfo);
 
@@ -139,24 +195,24 @@ $(document).ready(function() {
 			_getWorkInfo = function() {
 
 				var workList = [];
-				var companies = $('.company-section');
+				var companies = $('.work');
 
 				for (var i=0; i<companies.length; i++) {
 					var baseCompany = $(companies[i]);
 					
 					var companyInfo = {
-						companyName: null,
-						positionTitle: null,
-						startDate: null,
-						endDate: null,
-						jobDesc: null,
+						companyName: '',
+						positionTitle: '',
+						startDate: '',
+						endDate: '',
+						jobDesc: '',
 					};
 
-					companyInfo.companyName = baseSchool.find('#companyName').val();
-					companyInfo.positionTitle = baseSchool.find('#positionTitle').val();
-					companyInfo.startDate = baseSchool.find('#datepicker1').val();
-					companyInfo.endDate = baseSchool.find('#datepicker2').val();
-					companyInfo.jobDesc = baseSchool.find('#job-description').val();
+					companyInfo.companyName = baseCompany.find('#companyName').val();
+					companyInfo.positionTitle = baseCompany.find('#positionTitle').val();
+					companyInfo.startDate = baseCompany.find('#startDate').val();
+					companyInfo.endDate = baseCompany.find('#endDate').val();
+					companyInfo.jobDesc = baseCompany.find('#workDescription').val();
 
 					workList.push(companyInfo);
 
@@ -165,20 +221,59 @@ $(document).ready(function() {
 				return workList;
 
 
+			},
+
+			getMasterData = function() {
+
+				var totalInfo = {};
+				totalInfo.resumeName = _getResumeName();
+				totalInfo.genInfo = _getGenInfo();
+				totalInfo.socialInfo = _getContactInfo();
+				totalInfo.educationInfo = _getSchoolInfo();
+				totalInfo.workInfo = _getWorkInfo();
+
+				return totalInfo;
+
+			};
+
+
+			//public Method//
+
+			var sendData = function (callback) {
+
+				//check to see if callable//
+				if (typeof callback !== 'function') {
+					callback = false;
+				}
+
+				var sendFunc = (function(testData) {
+					var testData = getMasterData();
+					$.ajax({
+						method: "POST",
+						url: "/build",
+						data: testData,
+						done: function(data) {
+							var test = JSON.parse(data);
+							console.log(test);
+							if(callback) {
+								callback(test);
+							}
+							
+						}
+					});
+				}());
+			
+
+
 			};
 
 
 
+			//return public methods//
 
-
-			$(renderBut).on('click', function() {
-				masterInfo.genInfo = _getGenInfo();
-				masterInfo.socialInfo = _getSocialInfo();
-				masterInfo.educationInfo = _getSchoolInfo();
-				masterInfo.workInfo = _getWorkInfo();
-				console.log(masterInfo);
-				return masterInfo;
-			});
+			return {
+				sendData: sendData
+			};
 
 
 
@@ -191,7 +286,12 @@ $(document).ready(function() {
 
 
 
-
+		$('#saveRes').on('click', function(e) {
+			e.preventDefault();
+			resBuilder.sendData(function(userData) {
+				console.log(userData);
+			});
+		});
 
 
 

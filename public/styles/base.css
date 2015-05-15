@@ -3,432 +3,280 @@ body {
   height: 100%;
 }
 
-/* Navbar */
-/* line 7, sass/_layout.scss */
-.navbar {
-  background-color: white;
+/*HEADER SECTION*/
+/* line 3, sass/sections/_header.scss */
+.head-section {
+  border-bottom: 1px solid #eee;
 }
 
-/* line 13, sass/_layout.scss */
-.navbar-nav li a {
-  color: #2184be;
+/* line 4, sass/sections/_header.scss */
+.head-section .navbar {
+  margin-bottom: 0;
 }
 
-/* Header */
-/* line 18, sass/_layout.scss */
-#head {
-  background: #181015 url(../images/bg_header.jpg) no-repeat;
-  background-size: cover;
-  min-height: 520px;
-  text-align: center;
-  padding-top: 240px;
-  color: white;
-  font-family: "Open sans", Helvetica, Arial;
+/* line 7, sass/sections/_header.scss */
+.navbar-default {
+  border: none;
+}
+
+/* line 8, sass/sections/_header.scss */
+.navbar-brand {
+  color: #bcc0cd;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 30px;
+  margin-top: 30px;
+  padding: 0;
+}
+
+/* line 16, sass/sections/_header.scss */
+.navbar-brand span {
+  color: #7FB2F0;
+}
+
+/* line 17, sass/sections/_header.scss */
+.head-section .navbar-collapse ul.navbar-nav {
+  float: right;
+  margin-right: 0;
+  z-index: 199;
+}
+
+/* line 22, sass/sections/_header.scss */
+.head-section .navbar-default {
+  background-color: #fff;
+}
+
+/* line 23, sass/sections/_header.scss */
+.head-section .nav li a,
+.head-section .nav li.active ul.dropdown-menu li a {
+  color: #999;
+  font-size: 14px;
   font-weight: 300;
+  background: none;
 }
 
-/* line 19, sass/_layout.scss */
-#head.secondary {
-  height: 100px;
-  min-height: 100px;
-  padding-top: 0px;
+/* line 30, sass/sections/_header.scss */
+ul.dropdown-menu {
+  border: none;
 }
 
-/* line 20, sass/_layout.scss */
-#head .lead {
-  font-family: "Open sans", Helvetica, Arial;
-  font-size: 44px;
-  margin-bottom: 6px;
-  color: white;
-  line-height: 1.15em;
+/* line 31, sass/sections/_header.scss */
+.head-section .nav li a:hover,
+.head-section .nav li a:focus,
+.head-section .nav li.active a,
+.head-section .nav li.active a:hover,
+.head-section .nav li a.dropdown-toggle:hover,
+.head-section .nav li a.dropdown-toggle:focus,
+.head-section .nav li.active ul.dropdown-menu li a:hover,
+.head-section .nav li.active ul.dropdown-menu li.active a {
+  color: #fff;
+  background-color: #4E7AC7;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
-/* line 21, sass/_layout.scss */
-#head .tagline {
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 25px;
+/* line 47, sass/sections/_header.scss */
+.head-section .navbar-default .navbar-nav > .open > a,
+.head-section .navbar-default .navbar-nav > .open > a:hover,
+.head-section .navbar-default .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: #48cfad;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
-/* line 22, sass/_layout.scss */
-#head .tagline a {
+/* line 58, sass/sections/_header.scss */
+.head-section .navbar {
+  min-height: 85px;
+}
+
+/* line 59, sass/sections/_header.scss */
+.head-section .navbar-nav > li {
+  padding-bottom: 25px;
+  padding-top: 30px;
+}
+
+/* line 63, sass/sections/_header.scss */
+.head-section ul.navbar-nav li:last-child {
+  margin-left: 10px !important;
+}
+
+/* line 64, sass/sections/_header.scss */
+.head-section .navbar-nav > li > a {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  margin-left: 2px;
+  line-height: 30px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+/* line 78, sass/sections/_header.scss */
+.dropdown-menu li a:hover {
+  color: #fff !important;
+}
+
+/* line 79, sass/sections/_header.scss */
+.head-section .navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .nav li.dropdown > a:focus .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
   color: #fff;
 }
 
-/* line 23, sass/_layout.scss */
-#head .btn {
+/* line 93, sass/sections/_header.scss */
+.head-section .nav li a#adminBut {
+  color: white;
+  background-color: #7FB2F0;
+}
+
+/* line 1, sass/sections/_admin.scss */
+#admin select.selection {
+  width: 25%;
+  display: inline-block;
+}
+
+/* line 6, sass/sections/_admin.scss */
+#admin table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 11, sass/sections/_admin.scss */
+button.searchBtn {
+  background-color: #7FB2F0;
+}
+
+/* line 16, sass/sections/_admin.scss */
+.actions {
   margin-bottom: 10px;
 }
 
-/* line 24, sass/_layout.scss */
-#head .btn-default {
-  text-shadow: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.5);
-  box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.5);
-  background: transparent;
+/* line 20, sass/sections/_admin.scss */
+.admin-body {
+  margin-top: 25px;
 }
 
-/* line 25, sass/_layout.scss */
-#head .btn-default:hover,
-#head .btn-default:focus {
-  color: rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.8);
-  -moz-box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.8);
-  box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.8);
-  background: transparent;
+/* line 24, sass/sections/_admin.scss */
+#adminTable {
+  margin-top: 25px;
 }
 
-/* line 27, sass/_layout.scss */
-#head .btn-default:active,
-#head .btn-default.active {
-  color: #fff;
-  -webkit-box-shadow: inset 0px 0px 0px 3px #fff;
-  -moz-box-shadow: inset 0px 0px 0px 3px #fff;
-  box-shadow: inset 0px 0px 0px 3px #fff;
-  background: transparent;
+/* line 29, sass/sections/_admin.scss */
+th {
+  text-align: center;
 }
 
-@media (max-width: 767px) {
-  /* line 31, sass/_layout.scss */
-  #head {
-    min-height: 420px;
-    padding-top: 160px;
-  }
-
-  /* line 32, sass/_layout.scss */
-  #head .lead {
-    font-size: 34px;
-  }
-}
-/* Autohide navbar */
-/* line 37, sass/_layout.scss */
-.slideUp {
-  top: -100px;
+/* line 1, sass/sections/_forms.scss */
+.resName input {
+  margin-top: 5px;
+  width: 20%;
 }
 
-/* line 41, sass/_layout.scss */
-#mainContent {
-  padding-top: 65px;
+/* line 7, sass/sections/_forms.scss */
+h4.modal-title {
+  color: #337ab7;
 }
 
-/*********STEP WIZARD SECTION ********/
-/* line 2, sass/sections/_form.scss */
-.wizard,
-.tabcontrol {
-  display: block;
+/* line 18, sass/sections/_forms.scss */
+#genInfo h3 {
+  text-align: center;
+}
+/* line 23, sass/sections/_forms.scss */
+#genInfo .input-group {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 31, sass/sections/_forms.scss */
+#genInfo label {
+  margin-top: 10px;
+}
+/* line 35, sass/sections/_forms.scss */
+#genInfo textarea.personalStatement {
   width: 100%;
-  height: 100%;
-}
-
-/* line 11, sass/sections/_form.scss */
-.wizard a,
-.tabcontrol a {
-  outline: 0;
-}
-
-/* line 17, sass/sections/_form.scss */
-.wizard ul,
-.tabcontrol ul {
-  list-style: none !important;
-  padding: 0;
   margin: 0;
-}
-
-/* line 25, sass/sections/_form.scss */
-.wizard ul > li,
-.tabcontrol ul > li {
   display: block;
-  padding: 0;
 }
 
-/* Accessibility */
-/* line 33, sass/sections/_form.scss */
-.wizard > .steps .current-info,
-.tabcontrol > .steps .current-info {
-  position: absolute;
-  left: -999em;
-}
-
-/* line 40, sass/sections/_form.scss */
-.wizard > .content > .title,
-.tabcontrol > .content > .title {
-  position: absolute;
-  left: -999em;
-}
-
-/*
-    Wizard
-*/
-/* line 53, sass/sections/_form.scss */
-.wizard > .steps {
-  position: relative;
-  display: block;
-  width: 100%;
+/* line 52, sass/sections/_forms.scss */
+#contactInfo h3 {
   text-align: center;
 }
-
-/* line 61, sass/sections/_form.scss */
-.wizard.vertical > .steps {
-  display: inline;
-  float: left;
-  width: 30%;
+/* line 57, sass/sections/_forms.scss */
+#contactInfo .input-group {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* line 68, sass/sections/_form.scss */
-.wizard > .steps .number {
-  font-size: 1.429em;
-  display: none;
-}
-
-/* line 75, sass/sections/_form.scss */
-.wizard > .steps > ul > li {
-  width: 25%;
-}
-
-/* line 81, sass/sections/_form.scss */
-.wizard > .steps > ul > li,
-.wizard > .actions > ul > li {
-  float: left;
-}
-
-/* line 87, sass/sections/_form.scss */
-.wizard.vertical > .steps > ul > li {
-  float: none;
-  width: 100%;
-}
-
-/* line 94, sass/sections/_form.scss */
-.wizard > .steps a,
-.wizard > .steps a:hover,
-.wizard > .steps a:active {
-  display: block;
+/* line 74, sass/sections/_forms.scss */
+#educationInfo h3 {
   text-align: center;
-  width: auto;
-  margin: 0 0.5em 0.5em;
-  padding: 1em 1em;
-  text-decoration: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  height: 100%;
-  background: #9dc8e2;
-  color: #fff;
-  cursor: pointer;
-  height: 100%;
 }
-
-/* line 115, sass/sections/_form.scss */
-.wizard > .steps .disabled a,
-.wizard > .steps .disabled a:hover,
-.wizard > .steps .disabled a:active {
-  background: #eee;
-  color: #aaa;
-  cursor: default;
-  height: 100%;
+/* line 79, sass/sections/_forms.scss */
+#educationInfo .input-group {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* line 125, sass/sections/_form.scss */
-.wizard > .steps .current a,
-.wizard > .steps .current a:hover,
-.wizard > .steps .current a:active {
-  background: #2184be;
-  color: #fff;
-  cursor: default;
-}
-
-/* line 134, sass/sections/_form.scss */
-.wizard > .steps .done a,
-.wizard > .steps .done a:hover,
-.wizard > .steps .done a:active {
-  background: #9dc8e2;
-  color: #fff;
-}
-
-/* line 142, sass/sections/_form.scss */
-.wizard > .steps .error a,
-.wizard > .steps .error a:hover,
-.wizard > .steps .error a:active {
-  background: #ff3111;
-  color: #fff;
-}
-
-/* line 150, sass/sections/_form.scss */
-.wizard > .content {
-  display: block;
-  margin: 0.5em;
-  min-height: 35em;
-  position: relative;
-  width: auto;
-  height: 100%;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-/* line 165, sass/sections/_form.scss */
-.wizard.vertical > .content {
-  display: inline;
-  float: left;
-  margin: 0 2.5% 0.5em 2.5%;
-  width: 65%;
-}
-
-/* line 173, sass/sections/_form.scss */
-.wizard > .content > .body {
-  float: left;
-  position: absolute;
-  width: 100%;
-  height: 95%;
-}
-
-/* line 182, sass/sections/_form.scss */
-.wizard > .content > .body ul {
-  list-style: disc !important;
-}
-
-/* line 187, sass/sections/_form.scss */
-.wizard > .content > .body ul > li {
-  display: list-item;
-}
-
-/* line 192, sass/sections/_form.scss */
-.wizard > .content > .body > iframe {
-  border: 0 none;
-  width: 100%;
-  height: 100%;
-}
-
-/* line 199, sass/sections/_form.scss */
-.wizard > .content > .body input {
-  display: block;
-  border: 1px solid #ccc;
-}
-
-/* line 205, sass/sections/_form.scss */
-.wizard > .content > .body input[type="checkbox"] {
-  display: inline-block;
-}
-
-/* line 210, sass/sections/_form.scss */
-.wizard > .content > .body input.error {
-  background: #fbe3e4;
-  border: 1px solid #fbc2c4;
-  color: #8a1f11;
-}
-
-/* line 217, sass/sections/_form.scss */
-.wizard > .content > .body label {
-  display: inline-block;
-  margin-bottom: 0.5em;
-}
-
-/* line 223, sass/sections/_form.scss */
-.wizard > .content > .body label.error {
-  color: #8a1f11;
-  display: inline-block;
-  margin-left: 1.5em;
-}
-
-/* line 230, sass/sections/_form.scss */
-.wizard > .actions {
-  position: relative;
-  display: block;
-  text-align: right;
-  width: 100%;
-}
-
-/* line 238, sass/sections/_form.scss */
-.wizard.vertical > .actions {
-  display: inline;
+/* line 86, sass/sections/_forms.scss */
+#educationInfo .btn-group {
+  margin-top: 15px;
   float: right;
-  margin: 0 2.5%;
-  width: 95%;
 }
-
-/* line 246, sass/sections/_form.scss */
-.wizard > .actions > ul {
-  display: inline-block;
-  text-align: right;
+/* line 91, sass/sections/_forms.scss */
+#educationInfo label {
+  margin-top: 10px;
 }
-
-/* line 252, sass/sections/_form.scss */
-.wizard > .actions > ul > li {
-  margin: 0 0.5em;
-}
-
-/* line 257, sass/sections/_form.scss */
-.wizard.vertical > .actions > ul > li {
-  margin: 0 0 0 1em;
-}
-
-/* line 262, sass/sections/_form.scss */
-.wizard > .actions a,
-.wizard > .actions a:hover,
-.wizard > .actions a:active {
-  background: #2184be;
-  color: #fff;
+/* line 95, sass/sections/_forms.scss */
+#educationInfo textarea#courseDescription {
+  width: 100%;
+  margin: 0;
   display: block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
 }
 
-/* line 277, sass/sections/_form.scss */
-.wizard > .actions .disabled a,
-.wizard > .actions .disabled a:hover,
-.wizard > .actions .disabled a:active {
-  background: #eee;
-  color: #aaa;
+/* line 109, sass/sections/_forms.scss */
+#workInfo h3 {
+  text-align: center;
 }
-
-/*********GOLDEN FORMS ********/
-/* line 298, sass/sections/_form.scss */
-.goldenforms-pro {
-  background-color: #eee;
+/* line 114, sass/sections/_forms.scss */
+#workInfo .input-group {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/*******Profile picture SECTION*********/
-/* line 3, sass/sections/_genInfo.scss */
-.profile-avatar {
-  border-radius: 50%;
-  padding: 10px;
-  border: 1px solid #e7e7e2;
-  float: left;
-  width: 80%;
+/* line 121, sass/sections/_forms.scss */
+#workInfo .btn-group {
+  float: right;
+  margin-top: 15px;
 }
-
-/* line 11, sass/sections/_genInfo.scss */
-.profile-avatar img {
-  border-radius: 50%;
-  border: 1px solid #e7e7e2;
+/* line 126, sass/sections/_forms.scss */
+#workInfo label {
+  margin-top: 10px;
 }
-
-/*******General Info Text Label*********/
-/* line 19, sass/sections/_genInfo.scss */
-.general-info label {
+/* line 130, sass/sections/_forms.scss */
+#workInfo textarea#workDescription {
   width: 100%;
-}
-
-/*******PERSONAL STATEMENT*********/
-/* line 27, sass/sections/_genInfo.scss */
-label.personal-statement {
-  width: 100%;
-}
-
-/*******EDUCATION*********/
-/* line 3, sass/sections/_educationInfo.scss */
-label.course-description {
-  width: 100%;
-}
-
-/*******WORK EXPERIENCE*********/
-/* line 3, sass/sections/_workInfo.scss */
-label.job-description {
-  width: 100%;
+  margin: 0;
+  display: block;
 }
 
 /*# sourceMappingURL=base.css.map */
