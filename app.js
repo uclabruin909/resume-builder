@@ -109,18 +109,21 @@ app.get('/', function(request, response, next) {
 
 // ResumeBuilder
 app.get('/admin', function(request, response, next) {
+	
+	
 	Resume.find({}, function(err, resumes) {
 		if (!err) {
-			console.log(resumes);
+
+			response.render('resumeForm', {resumeList: resumes} );
 		}
 		else{
 			throw err;
 		}
 	});
-    response.render('resumeForm');
+    
 });
 
-// Rendered Resume
+// Building Resume//
 app.post('/build', function(request, response, next) {
 
 	var userInfo = request.body;
@@ -148,6 +151,22 @@ app.post('/build', function(request, response, next) {
 	
 });
 
+
+app.get('/resume/:resumeId', function(request, response, next) {
+
+	var resumeID = request.params.resumeId;
+	Resume.findOne({_id:resumeID}, function(err, item) {
+
+		if (!err) {
+			console.log(item);
+			response.render('resume', {resumeInfo: item, layout:null});
+		}
+		else{
+			throw err;
+		}
+	});
+
+});
 
 
 
