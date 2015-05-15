@@ -159,7 +159,7 @@ app.get('/resume/:resumeId', function(request, response, next) {
 
 		if (!err) {
 			console.log(item);
-			response.render('resume', {resumeInfo: item, layout:null});
+			response.render('resume', {resumeInfo: item, layout: null});
 		}
 		else{
 			throw err;
