@@ -45,29 +45,31 @@
 
 
                   <tbody>
-                    <tr role="row" class="filter" data-id="456456">
-                      
-                      <td>
-                        HI
-                      </td>
-                      <td>
-                        Professional
-                      </td>
-                      <td>
-                        5/30/2015
-                      </td>
                      
-                      <td>
-                        What
-                      </td>
-                      <td>
+                   {{#each resumeList}}
+                      <tr role="row" class="filter">
+                        
+                        <td>
+                          {{resumeName}}
+                        </td>
+                        <td>
+                          Professional
+                        </td>
+                        <td>
+                          5/30/2015
+                        </td>
+                       
+                        <td>
+                          What
+                        </td>
+                        <td>
 
-                          <button class="btn btn-sm searchBtn">Render</button>
+                            <button class="btn btn-sm searchBtn"><a target="blank" href="/resume/{{_id}}" data-id={{_id}}>Render</a></button>
 
-                        <button class="btn btn-sm red filter-cancel">Delete</button>
-                      </td>
-                    </tr>
-
+                          <button class="btn btn-sm red filter-cancel">Delete</button>
+                        </td>
+                      </tr>
+                    {{/each}}
 
 
                   </tbody>
