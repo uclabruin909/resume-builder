@@ -131,7 +131,7 @@ $(document).ready(function() {
 					info.personalStatement = $('#personalStatement').val();
 				}());
 
-				console.log(info);
+
 				return info;
 
 			},
@@ -173,14 +173,14 @@ $(document).ready(function() {
 						schoolName: '',
 						certificate: '',
 						startDate: '',
-						endDate: '',
+						completeDate: '',
 						courseDesc: '',
 					};
 
 					schoolInfo.schoolName = baseSchool.find('#schoolName').val();
 					schoolInfo.certificate = baseSchool.find('#certificateTitle').val();
 					schoolInfo.startDate = baseSchool.find('#startDate').val();
-					schoolInfo.endDate = baseSchool.find('#endDate').val();
+					schoolInfo.completedDate = baseSchool.find('#completedDate').val();
 					schoolInfo.courseDesc = baseSchool.find('#courseDescription').val();
 
 					schoolList.push(schoolInfo);
@@ -241,25 +241,28 @@ $(document).ready(function() {
 
 			var sendData = function (callback) {
 
+				var cb;
+
 				//check to see if callable//
 				if (typeof callback !== 'function') {
-					callback = false;
+					cb = false;
+				}
+				else{
+					cb = callback;
 				}
 
-				var sendFunc = (function(testData) {
+				var sendFunc = (function() {
 					var testData = getMasterData();
 					$.ajax({
 						method: "POST",
-						url: "/build",
+						url: "admin/build",
 						data: testData,
-						done: function(data) {
-							var test = JSON.parse(data);
-							console.log(test);
-							if(callback) {
-								callback(test);
-							}
-							
+						success: function(resData) {
+							var resume = resData;
+							console.log(resData);
+							cb(resume);
 						}
+
 					});
 				}());
 			
@@ -283,13 +286,86 @@ $(document).ready(function() {
 
 
 
+	var adminModule = (function() {
+
+
+		var adminArea = $('#adminTable').find('tbody'),
+		//private variable//
+
+		_getResumeInfo = function(resume) {
+
+			var info = {
+				resID: resume['_id'],
+				resName: resume['resumeName'],
+				category: 'testing',
+				createdOn: '4/15/2015',
+				status: 'complete'
+			};
+
+			return info;
+		},
+
+		_createRowOutput = function(resInfo) {
+
+			var newRow = $('<tr>').attr({
+				id : resInfo['resID'],
+				role: 'row',
+			});
+
+			var newButtons = $('<button')
+			//resume name//
+			newRow.append( $('<td>').text(resInfo['resName']) )
+				.append( $('<td>').text(resInfo['category']) )
+				.append( $('<td>').text(resInfo['createdOn']) )
+				.append( $('<td>').text(resInfo['status']) );
+
+			return newRow;
+
+		},
+
+
+		resumeRowCreate = function(resumeInfo) {
+			var finalInfo = _getResumeInfo(resumeInfo);
+
+			var newRow = _createRowOutput(finalInfo);
+
+			adminArea.append(newRow);
+			console.log(finalInfo);
+		};
+
+
+		//return public method//
+		return {
+			resumeRowCreate: resumeRowCreate
+		};
 
 
 
-		$('#saveRes').on('click', function(e) {
-			e.preventDefault();
-			resBuilder.sendData(function(userData) {
-				console.log(userData);
+
+
+	}());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		$('#saveRes').on('click', function() {
+			resBuilder.sendData(function(resumeItem) {
+				var newResume = resumeItem;
+				adminModule.resumeRowCreate(newResume)
 			});
 		});
 
