@@ -239,9 +239,22 @@ $(document).ready(function() {
 
 			//public Method//
 
-			var sendData = function (callback) {
+			var sendData = function (method, data, callback) {
+
 
 				var cb;
+
+				var url = (function() {
+
+					if (method === 'build') {
+						return 'admin/build';
+					}
+
+					else if (method === 'delete') {
+						return 'admin/delete';
+					}
+				}());
+
 
 				//check to see if callable//
 				if (typeof callback !== 'function') {
@@ -252,11 +265,10 @@ $(document).ready(function() {
 				}
 
 				var sendFunc = (function() {
-					var testData = getMasterData();
 					$.ajax({
 						method: "POST",
-						url: "admin/build",
-						data: testData,
+						url: url,
+						data: data,
 						success: function(resData) {
 							var resume = resData;
 							console.log(resData);
@@ -275,6 +287,7 @@ $(document).ready(function() {
 			//return public methods//
 
 			return {
+				getMasterData: getMasterData,
 				sendData: sendData
 			};
 
@@ -312,16 +325,38 @@ $(document).ready(function() {
 				role: 'row',
 			});
 
-			var newButtons = $('<button')
+
+			var renderBut = $('<button>').addClass('btn btn-sm render');
+				renderBut.append( $('<a>').attr({
+					target: 'blank',
+					href: 'admin/render/' + resInfo['resID']
+				}).text('Render') );
+
+
+			var deleteBut = $('<button>').addClass('btn btn-sm delete');
+				deleteBut.append( ( $('<a>').data('id', resInfo['resID']) ).addClass(' red deleteBtn').text('Delete') );
+
+
 			//resume name//
 			newRow.append( $('<td>').text(resInfo['resName']) )
 				.append( $('<td>').text(resInfo['category']) )
 				.append( $('<td>').text(resInfo['createdOn']) )
-				.append( $('<td>').text(resInfo['status']) );
+				.append( $('<td>').text(resInfo['status']) )
+				.append( $('<td>').append(renderBut).append(deleteBut) ); //add render & delete button/
 
 			return newRow;
 
 		},
+
+		deleteRow = function(resumeID) {
+
+			//find row//
+
+			var targetRow = $(adminArea).find('tr#' + resumeID);
+			console.log(targetRow);
+			$(targetRow).remove();
+		},
+
 
 
 		resumeRowCreate = function(resumeInfo) {
@@ -331,12 +366,31 @@ $(document).ready(function() {
 
 			adminArea.append(newRow);
 			console.log(finalInfo);
+		},
+
+		addDeleteHandler = function() {
+			var deleteButtons = $('.deleteBtn');
+			console.log(deleteButtons);
+			for (var i=0; i<deleteButtons.length; i++) {
+				$(deleteButtons[i]).on('click', function(evt) {
+					var target=evt.target;
+					var resumeID = $(target).data('id');
+					console.log(resumeID);
+					deleteRow(resumeID);
+
+				});
+			}
+
+			return deleteButtons;
 		};
+
 
 
 		//return public method//
 		return {
-			resumeRowCreate: resumeRowCreate
+			resumeRowCreate: resumeRowCreate,
+			addDeleteHandler: addDeleteHandler,
+			deleteRow: deleteRow
 		};
 
 
@@ -351,27 +405,56 @@ $(document).ready(function() {
 
 
 
+		resForm.init();
 
 
 
+var init = (function() {
 
 
-
-
-
-
-
+		var deleteButtons = $('.deleteBtn');
 
 		$('#saveRes').on('click', function() {
-			resBuilder.sendData(function(resumeItem) {
-				var newResume = resumeItem;
-				adminModule.resumeRowCreate(newResume)
+			var data = resBuilder.getMasterData();
+			console.log(data);
+			resBuilder.sendData('build', data, function(resume) {
+				adminModule.resumeRowCreate(resume);
+				adminModule.addDeleteHandler();
 			});
+
+			
 		});
 
 
+		for (var i =0; i<deleteButtons.length; i++) {
 
-		resForm.init();
+			$(deleteButtons[i]).on('click', function(evt) {
+				var target = evt.target;
+				var targetID = $(target).data('id');
+				resBuilder.sendData('delete', {resumeId: targetID}, function(resume) {
+					adminModule.deleteRow(resume['_id']);
+				});
+			});
+
+		}
+
+
+
+
+
+
+}());
+
+
+
+
+		
+
+		
+
+		
+
+
 
 });
 
