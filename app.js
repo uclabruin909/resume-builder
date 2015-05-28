@@ -13,37 +13,11 @@ var mongoose = require('mongoose');
 
 var db = require('./models/db.js');
 
+var Resume = require('./models/resume.js');
 
 
-//Uploader option config and init//
 
-var uploader = require('blueimp-file-upload-expressjs')({
-    tmpDir:  __dirname + '/public/uploaded/tmp',
-    uploadDir: __dirname + '/public/uploaded/files',
-    uploadUrl:  '/uploaded/files/',
-    maxPostSize: 11000000000, // 11 GB
-    minFileSize:  1,
-    maxFileSize:  10000000000, // 10 GB
-    acceptFileTypes:  /.+/i,
-    // Files not matched by this regular expression force a download dialog,
-    // to prevent executing any scripts in the context of the service domain:
-    inlineFileTypes:  /\.(gif|jpe?g|png)/i,
-    imageTypes:  /\.(gif|jpe?g|png)/i,
-    copyImgAsThumb : true, // required
-    imageVersions :{
-        maxWidth : 200,
-        maxHeight : 200
-    },
-    accessControl: {
-        allowOrigin: '*',
-        allowMethods: 'OPTIONS, HEAD, GET, POST, PUT, DELETE',
-        allowHeaders: 'Content-Type, Content-Range, Content-Disposition'
-    },
-    storage : {
-        type : 'local'
-    }
 
-});
 /*
  * Use Handlebars for templating
  */
@@ -54,7 +28,10 @@ var hbs;
 app.use(express.compress());
 
 //For request body parser//
-app.use( bodyParser() );
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 
 
@@ -98,7 +75,6 @@ if (process.env.NODE_ENV === 'production') {
 app.set('view engine', 'handlebars');
 
 
-    var Resume = mongoose.model('Resume');
 /*
  * Routes
  */
@@ -110,21 +86,21 @@ app.get('/', function(request, response, next) {
 // ResumeBuilder
 app.get('/admin', function(request, response, next) {
 	
-	
 	Resume.find({}, function(err, resumes) {
-		if (!err) {
 
-			response.render('resumeForm', {resumeList: resumes} );
+		if (err) {
+			return next(err);
 		}
-		else{
-			throw err;
-		}
+
+		response.render( 'resumeForm', {resumeList : resumes} );
+
 	});
+	
     
 });
 
 // Building Resume//
-app.post('/build', function(request, response, next) {
+app.post('/admin/build', function(request, response, next) {
 
 	var userInfo = request.body;
 
@@ -132,6 +108,10 @@ app.post('/build', function(request, response, next) {
 	var newResume = new Resume({
 
         resumeName: userInfo['resumeName'],
+
+        resumeType: userInfo['resumeType'],
+
+        createdOn : userInfo['createdOn'],
 
 		genInfo : userInfo['genInfo'],
 
@@ -143,44 +123,91 @@ app.post('/build', function(request, response, next) {
 		workInfo : userInfo['workInfo']
 	});
 
-	newResume.save(function(err) {
+	newResume.save(function(err, item) {
 		if (!err) {
 			console.log('new resume created');
+			response.send(item);
+
 		}
+
+		else {
+			throw err;
+			response.end();
+		}
+
 	});
+
+
 	
 });
 
 
-app.get('/resume/:resumeId', function(request, response, next) {
+
+
+
+
+
+
+
+app.get('/admin/render/:resumeId', function(request, response, next) {
 
 	var resumeID = request.params.resumeId;
+	var resumeType = request.query['type'];
+	console.log(resumeType);
 	Resume.findOne({_id:resumeID}, function(err, item) {
 
 		if (!err) {
-			console.log(item);
-			response.render('resume', {resumeInfo: item, layout: null});
+			console.log('resume has been rendered');
+			response.render('resume'+ '-' + resumeType, {resumeInfo: item, layout: null});
 		}
 		else{
 			throw err;
+			response.end();
 		}
 	});
 
 });
 
 
+app.post('/admin/delete', function(request, response, next) {
 
+	var resumeId = request.body.resumeId;
+	Resume.findOne({_id:resumeId}, function(err, resume) {
 
-// Pic Submit
-app.post('/picUpload', function(request, response, next) {
-    
-    uploader.post(request, response, function (objimg) {
-            var obj = JSON.stringify(objimg);
-            response.send(obj);
-      });
+		if (!err) {
+
+			var resumeCpy = resume;
+			resume.remove(function(err,resume) {
+				if(!err) {
+
+					response.send(resumeCpy);
+
+				}
+
+				else{
+					response.end();
+				}
+				
+			});
+			
+		}
+		else{
+			throw err;
+			response.end();
+		}
+	});
 
 });
 
+
+/*********404 Request Handler ********/
+
+app.use(function(request, response) {
+
+	response.statusCode = 404;
+	response.end('404');
+
+});
 
 
 
