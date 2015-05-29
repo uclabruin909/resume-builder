@@ -14,6 +14,7 @@ $(document).ready(function() {
 				jobArea =  $('#workInfo'),
 				educationForm = $('#educationForm').html(),
 				jobForm = $('#workForm').html(),
+				closeButton = $('#closeBut'),
 
 
 				_addSchool = function() {
@@ -68,6 +69,16 @@ $(document).ready(function() {
 
 					}());
 
+				},
+
+				_clearForm = function() {
+					var formInputs = $('input');
+
+					for (var i=0; i< formInputs.length; i++) {
+						$(formInputs[i]).val('');
+					}
+					
+
 				};
 				
 
@@ -90,11 +101,16 @@ $(document).ready(function() {
 						_delWork();
 					});
 
+					closeButton.on('click', function() {
+						_clearForm();
+					});
+
 				};
 
 
 				return {
-					init: init
+					init: init,
+					clearForm: _clearForm
 				};
 
 
@@ -111,6 +127,25 @@ $(document).ready(function() {
 
 				var resName = $('#resumeName').val();
 				return resName;
+
+			},
+
+			_getResumeType = function() {
+
+				var resType = $('#resumeType').val();
+				return resType;
+			},
+
+			_getDate = function(){
+
+				var date = new Date(),
+					dd = date.getDate(),
+					mm = date.getMonth() + 1,
+					yyyy = date.getFullYear();
+
+				date = mm + '/' + dd + '/' + yyyy;
+
+				return date;
 
 			},
 
@@ -227,6 +262,8 @@ $(document).ready(function() {
 
 				var totalInfo = {};
 				totalInfo.resumeName = _getResumeName();
+				totalInfo.resumeType = _getResumeType();
+				totalInfo.createdOn = _getDate();
 				totalInfo.genInfo = _getGenInfo();
 				totalInfo.socialInfo = _getContactInfo();
 				totalInfo.educationInfo = _getSchoolInfo();
@@ -270,12 +307,13 @@ $(document).ready(function() {
 						url: url,
 						data: data,
 						success: function(resData) {
-							var resume = resData;
 							console.log(resData);
-							cb(resume);
 						}
 
+					}).done(function(resData) {
+						cb(resData);
 					});
+
 				}());
 			
 
@@ -310,8 +348,8 @@ $(document).ready(function() {
 			var info = {
 				resID: resume['_id'],
 				resName: resume['resumeName'],
-				category: 'testing',
-				createdOn: '4/15/2015',
+				resType: resume['resumeType'],
+				createdOn: resume['createdOn'],
 				status: 'complete'
 			};
 
@@ -329,7 +367,7 @@ $(document).ready(function() {
 			var renderBut = $('<button>').addClass('btn btn-sm render');
 				renderBut.append( $('<a>').attr({
 					target: 'blank',
-					href: 'admin/render/' + resInfo['resID']
+					href: 'admin/render/' + resInfo['resID'] + '?type=' + resInfo['resType'].toLowerCase()
 				}).text('Render') );
 
 
@@ -339,7 +377,7 @@ $(document).ready(function() {
 
 			//resume name//
 			newRow.append( $('<td>').text(resInfo['resName']) )
-				.append( $('<td>').text(resInfo['category']) )
+				.append( $('<td>').text(resInfo['resType']) )
 				.append( $('<td>').text(resInfo['createdOn']) )
 				.append( $('<td>').text(resInfo['status']) )
 				.append( $('<td>').append(renderBut).append(deleteBut) ); //add render & delete button/
@@ -412,36 +450,45 @@ $(document).ready(function() {
 var init = (function() {
 
 
-		var deleteButtons = $('.deleteBtn');
+
+		
 
 		$('#saveRes').on('click', function() {
 			var data = resBuilder.getMasterData();
+			var $closeButton = $('#closeBut');
 			console.log(data);
 			resBuilder.sendData('build', data, function(resume) {
 				adminModule.resumeRowCreate(resume);
+				addResumeDeleteHandles();
 				adminModule.addDeleteHandler();
+				$closeButton.click();
+				resform.clearForm();
 			});
 
 			
 		});
 
 
-		for (var i =0; i<deleteButtons.length; i++) {
+		addResumeDeleteHandles();
 
-			$(deleteButtons[i]).on('click', function(evt) {
-				var target = evt.target;
-				var targetID = $(target).data('id');
-				resBuilder.sendData('delete', {resumeId: targetID}, function(resume) {
-					adminModule.deleteRow(resume['_id']);
+
+
+		function addResumeDeleteHandles() {
+			var deleteButtons = $('.deleteBtn');
+			for (var i =0; i<deleteButtons.length; i++) {
+
+				$(deleteButtons[i]).on('click', function(evt) {
+					var target = evt.target;
+					var targetID = $(target).data('id');
+					resBuilder.sendData('delete', {resumeId: targetID}, function(resume) {
+						adminModule.deleteRow(resume['_id']);
+					});
 				});
-			});
+			}
 
 		}
 
-
-
-
-
+		
 
 }());
 
