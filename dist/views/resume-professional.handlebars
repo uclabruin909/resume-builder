@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{{resumeInfo.genInfo.firstName}}} 's Resume</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta charset="UTF-8"> 
+
+<link type="text/css" rel="stylesheet" href="/styles/resumeProf.css">
+<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body id="top">
+<div id="cv">
+	<div class="mainDetails">
+		<div id="headshot">
+			<img src="/images/c0c376a1.headshotTest.jpg" alt="Test Image" />
+		</div>
+		
+		<div id="name">
+			<h1 class="quickFade">{{{resumeInfo.genInfo.firstName}}} </h1>
+			<h2 class="quickFade delayThree">{{{resumeInfo.genInfo.position}}}</h2>
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>e: <a href="" target="_blank">{{{resumeInfo.contactInfo.email}}}</a></li>
+				<li>w: <a href="">{{{resumeInfo.contactInfo.website}}}</a></li>
+				<li>m: {{{resumeInfo.contactInfo.phone}}}0</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Objective</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<p>{{{resumeInfo.genInfo.personalStatement}}}</p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Work Experience</h1>
+			</div>
+			
+			<div class="sectionContent">
+
+				{{#each resumeInfo.workInfo}}
+				<article>
+					<h2>{{companyName}}</h2>
+					<h4>{{positionTitle}}</h4>
+					<p class="subDetails">{{startDate}} - {{endDate}}</p>
+					<p>{{jobDesc}}</p>
+				</article>
+				{{/each}}
+
+			</div>
+			<div class="clear"></div>
+		</section>
+
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			
+			<div class="sectionContent">
+
+				{{#each resumeInfo.educationInfo}}
+				<article>
+					<h2>{{schoolName}}</h2>
+					<h4>{{certificate}}</h4>
+					<p class="subDetails">{{startDate}} - {{completedDate}}</p>
+					<p>{{courseDesc}}</p>
+				</article>
+				{{/each}}
+			
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+	</div>
+</div>
+
+</body>
+</html>

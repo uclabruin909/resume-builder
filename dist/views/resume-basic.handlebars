@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- ===========================
+    SITE TITLE
+    =========================== -->
+    <title>{{{resumeInfo.genInfo.firstName}}} 's Resume</title>
+
+    <!-- ===========================
+    FAVICONS
+    =========================== -->
+    <link rel="icon" href="img/favicon.png">
+
+
+    <!-- ===========================
+    STYLESHEETS
+    =========================== -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/resumeStyle.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link type="text/css" rel="stylesheet" href="/styles/resumeBasicPrint.css" media="print"/>
+
+    <!-- ===========================
+    FONTS & ICONS
+    =========================== -->
+    <link href='http://fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <!-- ===========================
+        HEADER
+        ============================ -->
+        <div id="header" class="row">
+            <div class="col-sm-2 profilePic">
+                <img class="propic" src="/images/722f8e22.avatarTest.png" alt="">
+            </div>
+            <!-- photo end-->
+
+            <div class="col-sm-10 contactInfo">
+                <div class="cv-title">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h1>{{{resumeInfo.resumeName}}}</h1>
+                        </div>
+
+                    </div>
+                    <h2>{{{resumeInfo.genInfo.position}}}</h2>
+                </div><!-- Title end-->
+
+                <!-- ===========================
+                SOCIAL & CONTACT
+                ============================ -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled">
+                            <li><a href=""><span class="social fa fa-home"></span>{{{resumeInfo.contactInfo.website}}}</a>
+                            </li>
+                            <li><a href=""><span class="social fa fa-skype"></span>{{{resumeInfo.contactInfo.phone}}}</a>
+                            </li>
+                            <li><a href=""><span class="social fa fa-envelope-o"></span>{{{resumeInfo.contactInfo.email}}}</a>
+                            </li>
+                        </ul>
+                    </div><!-- social 1st col end-->
+
+                    <div class="col-sm-6 socialLinks">
+                        <ul class="list-unstyled">
+                            <li><a href=""><span class="social fa fa-facebook"></span>Facebook</a>
+                            </li>
+                            <li><a href=""><span class="social fa fa-twitter"></span>Twitter</a>
+                            </li>
+                            <li><a href=""><span class="social fa fa-linkedin"></span>Linkedin</a>
+                            </li>
+                        </ul>
+                    </div><!-- social 2nd col end-->
+
+                </div><!-- header social end-->
+            </div><!-- header right end-->
+        </div><!-- header end-->
+
+        <hr class="firsthr">
+
+        <!-- ===========================
+        BODY LEFT PART
+        ============================ -->
+        <div class="col-xs-12">
+            <div id="statement" class="row mobmid">
+                <div class="col-sm-1">
+                    <span class="secicon fa fa-user"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11">
+                    <h3>Personal statement </h3>
+                    {{{resumeInfo.genInfo.personalStatement}}}
+                </div><!--info end-->
+            </div><!--personal statement end-->
+
+            <hr>
+
+            <div id="education" class="row mobmid">
+                <div class="col-sm-1">
+                    <span class="secicon fa fa-graduation-cap"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11">
+                    <h3>Education &amp; Certification</h3>
+
+
+                    {{#each resumeInfo.educationInfo}}
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <h4>{{certificate}}</h4>
+                            <p class="sub"><a href="">{{schoolName}}</a>
+                            </p>
+                            <p>{{courseDesc}}</p>
+                        </div>
+
+                        <div class="year col-xs-2">
+                            <p>{{startDate}} - {{completedDate}}</p>
+                        </div>
+                    </div><!--Education & Certification 1 end-->
+
+                    <hr>
+                    {{/each}}
+                    
+                    
+                </div>
+            </div><!--Education & Certifications end-->
+            
+            <hr>
+
+            <!-- ===========================
+            JOB EXPERIENCES
+            ============================ -->
+            <div id="job" class="row mobmid">
+                <div class="col-sm-1">
+                    <span class="secicon fa fa-briefcase"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11">
+                    <h3>Job Experiences</h3>
+
+
+                    {{#each resumeInfo.workInfo}}
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <h4>{{positionTitle}}</h4>
+                            <p class="sub"><a href="">{{companyName}}</a>
+                            </p>
+                            <p>{{jobDesc}}</p>
+                        </div>
+
+                        <div class="year col-xs-2">
+                            <p>{{startDate}} - {{endDate}}</p>
+                        </div>
+                    </div><!--Job 1 end-->
+                    
+                    <hr>
+                    {{/each}}
+                  
+                </div><!--Job experiences end-->
+            </div><!--Job experiences end-->
+        </div><!--left end-->
+        
+       
+    </div><!--container end-->
+
+
+    <!--necessary scripts and plugins-->
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+     <script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="/scripts/jquery.nicescroll.min.js"></script>
+    <script src="/script/evenfly.js"></script>
+    <script type="text/javascript" src="/scripts/resumeBuilder.js"></script>
+</body>
+
+</html>

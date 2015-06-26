@@ -37,52 +37,8 @@ process.on('SIGINT', function() {
   });
 });
 
-/* ********************************************
-      USER SCHEMA
-   ******************************************** */
-var resumeSchema = new mongoose.Schema({
-
-      resumeName: String,
-
-      genInfo: {
-          firstName: String,
-          lastName: String,
-          position: String,
-          personalStatement: String,
-      },
 
 
-      contactInfo: {
-          email: String,
-          phone: String,
-          website: String,
-          linkedIn: String,
-          facebook: String,
-          twitter: String,
-      },
-
-      educationInfo : [{
-            schoolName: String,
-            certificate: String,
-            startDate: String,
-            completedDate: String,
-            courseDesc: String,
-
-      }],
-
-      workInfo : [{
-            companyName: String,
-            positionTitle: String,
-            startDate: String,
-            endDate: String,
-            jobDesc: String,
-        
-      }],
-
-});
-
-
-var Resume = mongoose.model( 'Resume', resumeSchema );
 
 
 

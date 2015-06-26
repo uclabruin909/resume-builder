@@ -4,6 +4,9 @@
 	<head>
 		<title>Resume Builder</title>
 
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
 		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="font/font-awesome.min.css">
 
@@ -16,7 +19,12 @@
         	<link rel="stylesheet" href="vendor/goldenForms/css/goldenforms-pro-ie8.css">
         <![endif]-->
         
-        <link rel="stylesheet" type="text/css" href="styles/base.css">
+        
+        <link rel="stylesheet" type="text/css" href="/styles/base.css">
+
+        <link rel="stylesheet" type="text/css" href="/styles/dataTables.css">
+        <link rel="stylesheet" type="text/css" href="/styles/dataTables.responsive.css">
+ 
 	</head>
 
 		<body>
@@ -36,9 +44,7 @@
 		          <div class="navbar-collapse collapse">
 		              <ul class="nav navbar-nav">
 
-		                  <li>
-		                      <a href="contact.html">Contact</a>
-		                  </li>
+
 		                  <li>
 		                    <a id="adminBut" href="/admin">BUILDER</a>
 		                  </li>
@@ -70,12 +76,25 @@
 
 		<script type="text/javascript" src="scripts/jquery.js"></script>
 		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="scripts/dataTables.js"></script>
+		<script type="text/javascript" src="scripts/dataTables.responsive.js"></script>
 		<script type="text/javascript" src="scripts/jquery.fileupload.js"></script>
 		<script type="text/javascript" src="scripts/genInfo.js"></script>
 		<script type="text/javascript" src="scripts/resumeBuilder.js"></script>
 
+		<script type="text/javascript">
+		$(document).ready(function() {
 		
 
+			    $('#adminTable').DataTable({
+			    	responsive: true
+			    });
+		
+
+
+		});
+
+		</script>
 
 
 	</body>

@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 /* line 1, sass/_layout.scss */
 body {
   height: 100%;
@@ -160,26 +161,52 @@ ul.dropdown-menu {
 }
 
 /* line 11, sass/sections/_admin.scss */
-button.searchBtn {
-  background-color: #7FB2F0;
+button.render {
+  background-color: #335CD6;
+}
+/* line 13, sass/sections/_admin.scss */
+button.render a {
+  color: white;
+}
+/* line 16, sass/sections/_admin.scss */
+button.render:hover {
+  background-color: #0033CC;
 }
 
-/* line 16, sass/sections/_admin.scss */
+/* line 22, sass/sections/_admin.scss */
+button.delete {
+  background-color: #FF5050;
+}
+/* line 24, sass/sections/_admin.scss */
+button.delete a {
+  color: white;
+}
+/* line 27, sass/sections/_admin.scss */
+button.delete:hover {
+  background-color: #FF0000;
+}
+
+/* line 33, sass/sections/_admin.scss */
 .actions {
   margin-bottom: 10px;
 }
 
-/* line 20, sass/sections/_admin.scss */
+/* line 37, sass/sections/_admin.scss */
 .admin-body {
   margin-top: 25px;
 }
 
-/* line 24, sass/sections/_admin.scss */
+/* line 41, sass/sections/_admin.scss */
 #adminTable {
-  margin-top: 25px;
+  margin-top: 40px;
 }
 
-/* line 29, sass/sections/_admin.scss */
+/* line 46, sass/sections/_admin.scss */
+.table-actions-wrapper {
+  margin-bottom: 25px;
+}
+
+/* line 50, sass/sections/_admin.scss */
 th {
   text-align: center;
 }
@@ -277,6 +304,261 @@ h4.modal-title {
   width: 100%;
   margin: 0;
   display: block;
+}
+
+/* line 3, sass/sections/_homepage.scss */
+.board {
+  width: 100%;
+  margin: 40px auto;
+  height: 500px;
+  background: #fff;
+  padding-left: 5%;
+  padding-right: 5%;
+  /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
+}
+
+/* line 13, sass/sections/_homepage.scss */
+.board .nav-tabs {
+  position: relative;
+  /* border-bottom: 0; */
+  /* width: 80%; */
+  margin: 40px auto;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+/* line 24, sass/sections/_homepage.scss */
+.board p.narrow {
+  width: 60%;
+  margin: 10px auto;
+}
+
+/* line 29, sass/sections/_homepage.scss */
+.board .liner {
+  height: 2px;
+  background: #ddd;
+  position: absolute;
+  width: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+}
+
+/* line 41, sass/sections/_homepage.scss */
+.board .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #555555;
+  cursor: default;
+  /* background-color: #ffffff; */
+  border: 0;
+  border-bottom-color: transparent;
+}
+
+/* line 49, sass/sections/_homepage.scss */
+.board span.round-tabs {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  display: inline-block;
+  border-radius: 100px;
+  background: white;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  font-size: 25px;
+}
+
+/* line 63, sass/sections/_homepage.scss */
+.board span.round-tabs.one {
+  color: #22c222;
+  border: 2px solid #22c222;
+}
+
+/* line 67, sass/sections/_homepage.scss */
+.board li.active span.round-tabs.one {
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #22c222;
+}
+
+/* line 73, sass/sections/_homepage.scss */
+.board span.round-tabs.two {
+  color: #febe29;
+  border: 2px solid #febe29;
+}
+
+/* line 77, sass/sections/_homepage.scss */
+.board li.active span.round-tabs.two {
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #febe29;
+}
+
+/* line 83, sass/sections/_homepage.scss */
+.board span.round-tabs.three {
+  color: #3e5e9a;
+  border: 2px solid #3e5e9a;
+}
+
+/* line 87, sass/sections/_homepage.scss */
+.board li.active span.round-tabs.three {
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #3e5e9a;
+}
+
+/* line 93, sass/sections/_homepage.scss */
+.board span.round-tabs.four {
+  color: #f1685e;
+  border: 2px solid #f1685e;
+}
+
+/* line 97, sass/sections/_homepage.scss */
+.board li.active span.round-tabs.four {
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #f1685e;
+}
+
+/* line 103, sass/sections/_homepage.scss */
+.board span.round-tabs.five {
+  color: #999;
+  border: 2px solid #999;
+}
+
+/* line 107, sass/sections/_homepage.scss */
+.board li.active span.round-tabs.five {
+  background: #fff !important;
+  border: 2px solid #ddd;
+  color: #999;
+}
+
+/* line 113, sass/sections/_homepage.scss */
+.board .nav-tabs > li.active > a span.round-tabs {
+  background: #fafafa;
+}
+
+/* line 116, sass/sections/_homepage.scss */
+.board .nav-tabs > li {
+  width: 25%;
+}
+
+/*.board li.active:before {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    opacity:0;
+    margin: 0 auto;
+    bottom: -2px;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+    z-index: 1;
+    transition:0.2s ease-in-out;
+}*/
+/* line 131, sass/sections/_homepage.scss */
+.board li:after {
+  content: " ";
+  position: absolute;
+  left: 45%;
+  opacity: 0;
+  margin: 0 auto;
+  bottom: 0px;
+  transition: 0.1s ease-in-out;
+}
+
+/* line 141, sass/sections/_homepage.scss */
+.board li.active:after {
+  content: " ";
+  position: absolute;
+  left: 45%;
+  opacity: 1;
+  margin: 0 auto;
+  bottom: 0px;
+}
+
+/* line 151, sass/sections/_homepage.scss */
+.board .nav-tabs > li a {
+  width: 70px;
+  height: 70px;
+  margin: 20px auto;
+  border-radius: 100%;
+  padding: 0;
+}
+
+/* line 159, sass/sections/_homepage.scss */
+.board .nav-tabs > li a:hover {
+  background: transparent;
+}
+
+/* line 165, sass/sections/_homepage.scss */
+.board .tab-pane {
+  position: relative;
+  padding-top: 50px;
+}
+
+/* line 169, sass/sections/_homepage.scss */
+.board .tab-content .head {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+/* line 175, sass/sections/_homepage.scss */
+.board .btn-outline-rounded {
+  padding: 10px 40px;
+  margin: 20px 0;
+  border: 2px solid transparent;
+  border-radius: 25px;
+}
+
+/* line 182, sass/sections/_homepage.scss */
+.board .btn.green {
+  background-color: #5cb85c;
+  /*border: 2px solid #5cb85c;*/
+  color: #ffffff;
+}
+
+@media (max-width: 585px) {
+  /* line 192, sass/sections/_homepage.scss */
+  .board {
+    width: 90%;
+    height: auto !important;
+  }
+
+  /* line 196, sass/sections/_homepage.scss */
+  .board span.round-tabs {
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  /* line 202, sass/sections/_homepage.scss */
+  .tab-content .head {
+    font-size: 20px;
+  }
+
+  /* line 205, sass/sections/_homepage.scss */
+  .nav-tabs > li a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  /* line 211, sass/sections/_homepage.scss */
+  .board li.active:after {
+    content: " ";
+    position: absolute;
+    left: 35%;
+  }
+
+  /* line 217, sass/sections/_homepage.scss */
+  .board .btn-outline-rounded {
+    padding: 12px 20px;
+  }
 }
 
 /*# sourceMappingURL=base.css.map */

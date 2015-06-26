@@ -8,8 +8,25 @@
   text-align: center;
 }
 
-button.searchBtn{
-  background-color: #7FB2F0;
+button.render{
+  background-color: #335CD6;
+  a {
+  	color: white;
+  }
+  &:hover{
+  	background-color: #0033CC;
+  }
+
+}
+
+button.delete{
+  background-color: #FF5050;
+  a {
+  	color: white;
+  }
+  &:hover{
+  	background-color: #FF0000;
+  }
 
 }
 
@@ -22,9 +39,13 @@ button.searchBtn{
 }
 
 #adminTable {
-    margin-top: 25px;
+    margin-top: 40px;
 }
 
+
+.table-actions-wrapper{
+  margin-bottom: 25px;
+}
 
 th{
   text-align: center;

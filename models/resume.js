@@ -1,52 +1,57 @@
-
+var mongoose = require( 'mongoose');
 
 
 /* ********************************************
       USER SCHEMA
    ******************************************** */
-var resumeSchema = new mongoose.Schema({
+var resumeSchema =  mongoose.Schema({
+
+      resumeName: String,
+
+      resumeType : String,
+
+      createdOn: String,
 
       genInfo: {
           firstName: String,
           lastName: String,
-          email: String,
-          phone: String,
-          jobTitle: String,
+          position: String,
+          personalStatement: String,
       },
 
-      personalStatement: String,
 
-      socialInfo: {
-          linkedin: String,
+      contactInfo: {
+          email: String,
+          phone: String,
+          website: String,
+          linkedIn: String,
           facebook: String,
-          behance: String,
           twitter: String,
       },
 
-      schoolInfo : [
-        {
-          schoolName: String,
-          certificate: String,
-          startDate: String,
-          completedDate: String,
-          courseDesc: String,
+      educationInfo : [{
+            schoolName: String,
+            certificate: String,
+            startDate: String,
+            completedDate: String,
+            courseDesc: String,
 
-        }
-      ],
+      }],
 
-
-      companyInfo : [
-        {
-          companyName: String,
+      workInfo : [{
+            companyName: String,
             positionTitle: String,
             startDate: String,
             endDate: String,
             jobDesc: String,
+        
+      }],
 
-        }
-      ]
-  
 });
 
 
-var Resume = mongoose.model( 'Resume', resumeSchema );
+var resume = mongoose.model( 'Resume', resumeSchema );
+
+var Resume = mongoose.model('Resume');
+
+module.exports = Resume;

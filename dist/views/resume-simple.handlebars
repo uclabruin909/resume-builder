@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{{{resumeInfo.genInfo.firstName}}} 's Resume</title>
+<link rel="stylesheet" href="/styles/resumeSimple.css">
+<link type="text/css" rel="stylesheet" href="/styles/resumeSimplePrint.css" media="print"/>
+<!--[if IE 7]>
+<link href="css/ie7.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<link href="css/ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript" src="/scripts/jquery.js"></script>
+
+
+</head>
+<body>
+<!-- Begin Wrapper -->
+<div id="wrapper">
+  <div class="wrapper-top"></div>
+  <div class="wrapper-mid">
+    <!-- Begin Paper -->
+    <div id="paper">
+      
+      <div id="paper-mid">
+        <div class="entry">
+          <!-- Begin Image -->
+          <img class="portrait" src="/images/19071882.imageTest.jpg" alt="Test Image" />
+          <!-- End Image -->
+          <!-- Begin Personal Information -->
+          <div class="self">
+            <h1 class="name">{{{resumeInfo.genInfo.firstName}}} {{{resumeInfo.genInfo.lastName}}} <br />
+              <span>{{{resumeInfo.genInfo.position}}}</span></h1>
+            <ul>
+              <li class="mail">{{{resumeInfo.contactInfo.email}}}</li>
+              <li class="tel">{{{resumeInfo.contactInfo.phone}}}</li>
+              <li class="web">{{{resumeInfo.contactInfo.website}}}</li>
+            </ul>
+          </div>
+          <!-- End Personal Information -->
+          <!-- Begin Social -->
+          <div class="social">
+            <ul>
+              <li style="float:right"><a class='north' href="javascript:window.print()" title="Print"><img src="/images/332be53d.icn-print.jpg" alt="" /></a></li>
+              
+            </ul>
+          </div>
+          <!-- End Social -->
+        </div>
+        <!-- Begin 1st Row -->
+        <div class="entry">
+          <h2>OBJECTIVE</h2>
+          <p>{{{resumeInfo.genInfo.personalStatement}}}</p>
+        </div>
+        <!-- End 1st Row -->
+        <!-- Begin 2nd Row -->
+        <div class="entry">
+          <h2>EDUCATION</h2>
+
+          {{#each resumeInfo.educationInfo}}
+          <div class="content">
+            <h3>{{startDate}} - {{completedDate}}</h3>
+            <p>{{schoolName}}<br />
+              <em>{{certificate}}</em></p>
+            <p>{{courseDesc}}</p>
+          </div>
+          {{/each}}
+
+        </div>
+        <!-- End 2nd Row -->
+
+
+        <!-- Begin 3rd Row -->
+        <div class="entry">
+          <h2>EXPERIENCE</h2>
+
+          {{#each resumeInfo.workInfo}}
+          <div class="content">
+            <h3>{{startDate}} - {{endDate}}</h3>
+            <p>{{companyName}}<br />
+              <em>{{positionTitle}}</em></p>
+            <p>{{jobDesc}}</p>
+          </div>
+         {{/each}}
+
+          
+        </div>
+        <!-- End 3rd Row -->
+       
+        
+      </div>
+      <div class="clear"></div>
+
+    </div>
+    <!-- End Paper -->
+  </div>
+  <div class="wrapper-bottom"></div>
+</div>
+<div id="message"><a href="#top" id="top-link">Go to Top</a></div>
+<!-- End Wrapper -->
+</body>
+</html>
