@@ -16,10 +16,7 @@
     FAVICONS
     =========================== -->
     <link rel="icon" href="img/favicon.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-ipad-retina.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-iphone-retina.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-ipad.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-iphone.png" />
+
 
     <!-- ===========================
     STYLESHEETS
@@ -49,7 +46,7 @@
         ============================ -->
         <div id="header" class="row">
             <div class="col-sm-2 profilePic">
-                <img class="propic" src="/images/avatar.png" alt="">
+                <img class="propic" src="/images/avatarTest.png" alt="">
             </div>
             <!-- photo end-->
 
@@ -70,11 +67,11 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <ul class="list-unstyled">
-                            <li><a href=""><span class="social fa fa-home"></span>EvenFly.com</a>
+                            <li><a href=""><span class="social fa fa-home"></span>{{{resumeInfo.contactInfo.website}}}</a>
                             </li>
-                            <li><a href=""><span class="social fa fa-skype"></span>+88 0123 45678</a>
+                            <li><a href=""><span class="social fa fa-skype"></span>{{{resumeInfo.contactInfo.phone}}}</a>
                             </li>
-                            <li><a href="mailto:support@evenfly.com"><span class="social fa fa-envelope-o"></span>me@mail.com</a>
+                            <li><a href=""><span class="social fa fa-envelope-o"></span>{{{resumeInfo.contactInfo.email}}}</a>
                             </li>
                         </ul>
                     </div><!-- social 1st col end-->
